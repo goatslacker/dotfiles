@@ -1,0 +1,2 @@
+cp -R ~/.vimrc ../dotfiles/
+cp -R ~/.vim ../dotfiles/
