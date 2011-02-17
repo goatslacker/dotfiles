@@ -9,10 +9,10 @@ set expandtab
 " PHP & JS (jslint) syntax checks
 " PHP Syntax checker
 command! SynPHP call <SID>lint("php")
-nmap <silent>phpl :call <SID>lint("php")<Esc>
+nmap <silent>phplint :call <SID>lint("php")<Esc>
 
 " JSLINT syntax checker
-" NodeJS jslint required (installed via npm)
+" NOTE: NodeJS 'jslint' required (installed via npm)
 command! SynJS call <SID>lint("js")
 nmap <silent>jslint :call <SID>lint("js")<Esc>
 
@@ -24,6 +24,31 @@ function! <SID>lint(lang) "{{{
     execute ":w !jslint " . filename
   elseif (a:lang == "php")
     execute ":w !php -l " . filename
+    "execute ":w !phpcs " . filename . ""
   endif
 
 endfunction "}}}
+
+" PHPCS
+" NOTE: phpcs required (installed via PEAR)
+" TODO - configure coding standard
+" TODO output into separate error window with nice pretty colors
+function! <SID>RunPhpcs() "{{{
+  let l:filename=@%
+  let l:phpcs_output=system('phpcs '.l:filename)
+  echo l:phpcs_output
+endfunction "}}}
+
+command! Phpcs call <SID>RunPhpcs()
+nmap <silent>phpcs :call <SID>RunPhpcs()<Esc>
+
+" Toggle Numbers On | Off
+" TODO - combine into one function
+function! <SID>ToggleNumOn() "{{{
+  execute ":set number"
+endfunction "}}}
+function! <SID>ToggleNumOff() "{{{
+  execute ":set nonumber"
+endfunction "}}}
+nmap <silent>numbers :call <SID>ToggleNumOn()<Esc>
+nmap <silent>nonumbers :call <SID>ToggleNumOff()<Esc>

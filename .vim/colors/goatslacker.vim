@@ -71,10 +71,37 @@ hi javaScriptNumber         ctermfg=203         ctermbg=NONE        cterm=NONE
 hi javaScriptLabel          ctermfg=222         ctermbg=NONE        cterm=NONE
 hi javaScriptRegexpString   ctermfg=203         ctermbg=NONE        cterm=NONE
 hi javaScriptPrototype      ctermfg=68          ctermbg=NONE        cterm=NONE
-" }
+
+
+hi javaScriptBrowserObjects         ctermfg=205         ctermbg=NONE        cterm=NONE
+hi javaScriptDOMObjects             ctermfg=205         ctermbg=NONE        cterm=NONE
+
+hi javaScriptDOMMethods             ctermfg=214         ctermbg=NONE        cterm=NONE
+hi javaScriptDOMProperties          ctermfg=146         ctermbg=NONE        cterm=NONE
+
+hi javaScriptAjaxObjects            ctermfg=205         ctermbg=NONE        cterm=NONE
+hi javaScriptAjaxProperties         ctermfg=146         ctermbg=NONE        cterm=NONE
+hi javaScriptAjaxMethods            ctermfg=214         ctermbg=NONE        cterm=NONE
+
+hi javaScriptPropietaryObjects      ctermfg=205         ctermbg=NONE        cterm=NONE
+hi javaScriptPropietaryMethods      ctermfg=146         ctermbg=NONE        cterm=NONE
+
+hi javaScriptHtmlElemProperties     ctermfg=146         ctermbg=NONE        cterm=NONE
+
+hi link javaScriptEventListenerKeywords Constant
+
+hi javaScriptType           ctermfg=68          ctermbg=NONE        cterm=NONE
+hi javaScriptOperator       ctermfg=68          ctermbg=NONE        cterm=NONE
+hi javaScriptBoolean        ctermfg=203          ctermbg=NONE        cterm=NONE
+hi javaScriptNull           ctermfg=214          ctermbg=NONE        cterm=NONE
+
+hi javaScriptHtmlEvents     ctermfg=214          ctermbg=NONE        cterm=NONE
+
+"hi javaScriptHtmlElemAttrs  ctermfg=203          ctermbg=NONE        cterm=NONE
+"  }
 
 " PHP: {
-hi phpFunctions             ctermfg=211         ctermbg=NONE        cterm=NONE
+hi phpFunctions             ctermfg=205         ctermbg=NONE        cterm=NONE
 " hi phpIntVar                ctermfg=47          ctermbg=143         cterm=NONE
 " hi phpEnvVar                ctermfg=47          ctermbg=143         cterm=NONE
 " }
@@ -91,5 +118,5 @@ hi htmlTagName              ctermfg=68          ctermbg=NONE        cterm=NONE
 "}
 
 " Python: {
-hi pythonPreCondit      ctermfg=68          ctermbg=NONE        cterm=NONE
+hi link pythonPreCondit Constant
 " }
