@@ -6,117 +6,95 @@ set background=dark
 highlight clear
 let g:colors_name = "goatslacker"
 
+" Colors: {
+hi Blue   ctermfg=68          ctermbg=NONE        cterm=NONE
+hi White  ctermfg=255         ctermbg=NONE        cterm=NONE
+hi Black  ctermfg=235         ctermbg=NONE        cterm=NONE
+hi Green  ctermfg=107         ctermbg=NONE        cterm=NONE
+hi Red    ctermfg=203         ctermbg=NONE        cterm=NONE
+hi Pink   ctermfg=205         ctermbg=NONE        cterm=NONE
+hi Orange ctermfg=214         ctermbg=NONE        cterm=NONE
+hi Peach  ctermfg=222         ctermbg=NONE        cterm=NONE
+hi Purple ctermfg=153         ctermbg=NONE        cterm=NONE
+" }
+
 " SyntaxHighlighting: {
-
 hi Normal         ctermfg=255         ctermbg=NONE        cterm=NONE
-
 hi Comment        ctermfg=235         ctermbg=NONE        cterm=NONE
-
 hi Constant       ctermfg=68          ctermbg=NONE        cterm=NONE
-"
 hi String         ctermfg=107         ctermbg=NONE        cterm=NONE
 hi Character      ctermfg=68          ctermbg=NONE        cterm=NONE
 hi Number         ctermfg=203         ctermbg=NONE        cterm=NONE
 hi Boolean        ctermfg=203         ctermbg=NONE        cterm=NONE
 hi Float          ctermfg=203         ctermbg=NONE        cterm=NONE
-
 hi Identifier     ctermfg=68          ctermbg=NONE        cterm=NONE
-"
-hi Function       ctermfg=245         ctermbg=NONE        cterm=NONE
-
+hi Function       ctermfg=205         ctermbg=NONE        cterm=NONE
 hi Statement      ctermfg=214         ctermbg=NONE        cterm=NONE
-"
 hi Conditional    ctermfg=222         ctermbg=NONE        cterm=NONE
 hi Repeat         ctermfg=222         ctermbg=NONE        cterm=NONE
 hi Label          ctermfg=222         ctermbg=NONE        cterm=NONE
 hi Operator       ctermfg=215         ctermbg=NONE        cterm=NONE
 hi Keyword        ctermfg=222         ctermbg=NONE        cterm=NONE
 hi Exception      ctermfg=203         ctermbg=NONE        cterm=NONE
-
 hi PreProc        ctermfg=222         ctermbg=NONE        cterm=NONE
-"
-hi Include        ctermfg=146         ctermbg=NONE        cterm=NONE
+hi Include        ctermfg=153         ctermbg=NONE        cterm=NONE
 hi Define         ctermfg=222         ctermbg=NONE        cterm=NONE
-hi Macro          ctermfg=146         ctermbg=NONE        cterm=NONE
-hi PreCondit      ctermfg=146         ctermbg=NONE        cterm=NONE
-
+hi Macro          ctermfg=153         ctermbg=NONE        cterm=NONE
+hi PreCondit      ctermfg=153         ctermbg=NONE        cterm=NONE
 hi Type           ctermfg=214         ctermbg=NONE        cterm=NONE
-"
 hi StorageClass   ctermfg=255         ctermbg=NONE        cterm=NONE
 hi Structure      ctermfg=222         ctermbg=NONE        cterm=NONE
 hi Typedef        ctermfg=164         ctermbg=NONE        cterm=NONE
-
 hi Special        ctermfg=211         ctermbg=NONE        cterm=NONE
-"
 hi SpecialChar    ctermfg=211         ctermbg=NONE        cterm=NONE
 hi Tag            ctermfg=68          ctermbg=NONE        cterm=NONE
 hi Delimiter      ctermfg=255         ctermbg=NONE        cterm=NONE
 hi SpecialComment ctermfg=68          ctermbg=NONE        cterm=NONE
 hi Debug          ctermfg=68          ctermbg=NONE        cterm=NONE
-
 hi Underlined     ctermfg=NONE        ctermbg=NONE        cterm=underline
-
 hi Ignore         ctermfg=68          ctermbg=NONE        cterm=NONE
-
 hi Error          ctermfg=255         ctermbg=196         cterm=NONE
-
 hi Todo           ctermfg=232         ctermbg=220         cterm=NONE
-
 " }
 
 " JavaScript: {
-hi javaScriptFunction       ctermfg=222         ctermbg=NONE        cterm=NONE
-hi javaScriptFuncName       ctermfg=222         ctermbg=NONE        cterm=NONE
-hi javaScriptNumber         ctermfg=203         ctermbg=NONE        cterm=NONE
-hi javaScriptLabel          ctermfg=222         ctermbg=NONE        cterm=NONE
-hi javaScriptRegexpString   ctermfg=203         ctermbg=NONE        cterm=NONE
-hi javaScriptPrototype      ctermfg=68          ctermbg=NONE        cterm=NONE
-
-
-hi javaScriptBrowserObjects         ctermfg=205         ctermbg=NONE        cterm=NONE
-hi javaScriptDOMObjects             ctermfg=205         ctermbg=NONE        cterm=NONE
-
-hi javaScriptDOMMethods             ctermfg=214         ctermbg=NONE        cterm=NONE
-hi javaScriptDOMProperties          ctermfg=146         ctermbg=NONE        cterm=NONE
-
-hi javaScriptAjaxObjects            ctermfg=205         ctermbg=NONE        cterm=NONE
-hi javaScriptAjaxProperties         ctermfg=146         ctermbg=NONE        cterm=NONE
-hi javaScriptAjaxMethods            ctermfg=214         ctermbg=NONE        cterm=NONE
-
-hi javaScriptPropietaryObjects      ctermfg=205         ctermbg=NONE        cterm=NONE
-hi javaScriptPropietaryMethods      ctermfg=146         ctermbg=NONE        cterm=NONE
-
-hi javaScriptHtmlElemProperties     ctermfg=146         ctermbg=NONE        cterm=NONE
-
-hi link javaScriptEventListenerKeywords Constant
-
-hi javaScriptType           ctermfg=68          ctermbg=NONE        cterm=NONE
-hi javaScriptOperator       ctermfg=68          ctermbg=NONE        cterm=NONE
-hi javaScriptBoolean        ctermfg=203          ctermbg=NONE        cterm=NONE
-hi javaScriptNull           ctermfg=214          ctermbg=NONE        cterm=NONE
-
-hi javaScriptHtmlEvents     ctermfg=214          ctermbg=NONE        cterm=NONE
-
-"hi javaScriptHtmlElemAttrs  ctermfg=203          ctermbg=NONE        cterm=NONE
+hi link javaScriptSpecial               Pink
+hi link javaScriptFloat                 Red
+hi link javaScriptBrowserObjects        Orange
+hi link javaScriptDOMObjects            Orange
+hi link javaScriptDOMProperties         Purple
+hi link javaScriptDOMMethods            Pink
+hi link javaScriptAjaxObjects           Orange
+hi link javaScriptAjaxProperties        Purple
+hi link javaScriptAjaxMethods           Pink
+hi link javaScriptPropietaryObjects     Orange
+hi link javaScriptPropietaryMethods     Pink
+hi link javaScriptHtmlElemProperties    Purple
+hi link javaScriptEventListenerKeywords Pink
+hi link javaScriptSource          Purple
+hi link javaScriptType            Orange
+hi link javaScriptOperator        Orange
+hi link javaScriptBoolean         Red
+hi link javaScriptNull            Blue
+hi link javaScriptConditional     Peach
+hi link javaScriptRepeat          Peach
+hi link javaScriptBranch          Orange
+hi link javaScriptStatement       Red
+hi link javaScriptGlobalObjects   Orange
+hi link javaScriptExceptions      Red
+hi link javaScriptFutureKeys      Blue
+hi link javaScriptHtmlEvents      Pink
 "  }
 
 " PHP: {
-hi phpFunctions             ctermfg=205         ctermbg=NONE        cterm=NONE
-" hi phpIntVar                ctermfg=47          ctermbg=143         cterm=NONE
-" hi phpEnvVar                ctermfg=47          ctermbg=143         cterm=NONE
+hi link phpFunctions          Pink
 " }
 
 " HTML: {
-hi htmlTag                  ctermfg=68          ctermbg=NONE        cterm=NONE
-hi htmlTagName              ctermfg=68          ctermbg=NONE        cterm=NONE
-" hi htmlPreAttr              ctermfg=222         ctermbg=NONE          cterm=NONE
-" hi htmlPreProcAttrName      ctermfg=222         ctermbg=NONE          cterm=NONE
-" hi htmlPreProcAttrError     ctermfg=222         ctermbg=NONE          cterm=NONE
-" hi htmlValue                ctermfg=222         ctermbg=NONE          cterm=NONE
-" hi htmlStatement            ctermfg=222         ctermbg=NONE          cterm=NONE
-" hi htmlSpecial              ctermfg=222         ctermbg=NONE          cterm=NONE
+hi link htmlTag               Blue
+hi link htmlTagName           Blue
 "}
 
 " Python: {
-hi link pythonPreCondit Constant
+hi link pythonPreCondit       Blue
 " }
