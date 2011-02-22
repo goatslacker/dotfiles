@@ -16,6 +16,12 @@ nmap <silent>phplint :call <SID>lint("php")<Esc>
 command! SynJS call <SID>lint("js")
 nmap <silent>jslint :call <SID>lint("js")<Esc>
 
+" JSHINT syntax checker
+" NOTE: NodeJS jshint required (installed via npm)
+" also added a symbolic link from node-hint to jshint
+command! SynJS2 call <SID>lint("jsh")
+nmap <silent>jshint :call <SID>lint("jsh")<Esc>
+
 function! <SID>lint(lang) "{{{
 
   let filename = expand("%")
@@ -24,7 +30,8 @@ function! <SID>lint(lang) "{{{
     execute ":w !jslint " . filename
   elseif (a:lang == "php")
     execute ":w !php -l " . filename
-    "execute ":w !phpcs " . filename . ""
+  elseif (a:lang == "jsh")
+    execute ":w !jshint " . filename
   endif
 
 endfunction "}}}
@@ -52,3 +59,7 @@ function! <SID>ToggleNumOff() "{{{
 endfunction "}}}
 nmap <silent>numbers :call <SID>ToggleNumOn()<Esc>
 nmap <silent>nonumbers :call <SID>ToggleNumOff()<Esc>
+
+" Use JAKE
+" NOTE: jake required!
+nmap <silent>jake :w !jake<Esc>
