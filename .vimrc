@@ -9,7 +9,7 @@ set expandtab
 " PHP & JS (jslint) syntax checks
 " PHP Syntax checker
 command! SynPHP call <SID>lint("php")
-nmap <silent>phplint :call <SID>lint("php")<Esc>
+"nmap <silent>phplint :call <SID>lint("php")<Esc>
 
 " JSLINT syntax checker
 " NOTE: NodeJS 'jslint' required (installed via npm)
@@ -47,18 +47,10 @@ function! <SID>RunPhpcs() "{{{
 endfunction "}}}
 
 command! Phpcs call <SID>RunPhpcs()
-nmap <silent>phpcs :call <SID>RunPhpcs()<Esc>
+"nmap <silent>phpcs :call <SID>RunPhpcs()<Esc>
 
 " Toggle Numbers On | Off
-" TODO - combine into one function
-function! <SID>ToggleNumOn() "{{{
-  execute ":set number"
-endfunction "}}}
-function! <SID>ToggleNumOff() "{{{
-  execute ":set nonumber"
-endfunction "}}}
-nmap <silent>numbers :call <SID>ToggleNumOn()<Esc>
-nmap <silent>nonumbers :call <SID>ToggleNumOff()<Esc>
+nmap <silent>lineno :set number!<CR>
 
 " Use JAKE
 " NOTE: jake required!
