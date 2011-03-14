@@ -1,0 +1,17 @@
+{
+  "white": true, 
+  "devel": true, 
+  "evil": true, 
+  "laxbreak": true, 
+  "onevar": true, 
+  "undef": true, 
+  "nomen": true, 
+  "eqeqeq": true, 
+  "plusplus": true, 
+  "bitwise": true, 
+  "regexp": true, 
+  "newcap": true, 
+  "immed": true, 
+  "indent": 2, 
+  "maxerr": 1
+}

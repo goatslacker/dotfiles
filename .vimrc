@@ -11,27 +11,20 @@ set expandtab
 command! SynPHP call <SID>lint("php")
 "nmap <silent>phplint :call <SID>lint("php")<Esc>
 
-" JSLINT syntax checker
-" NOTE: NodeJS 'jslint' required (installed via npm)
-command! SynJS call <SID>lint("js")
-nmap <silent>jslint :call <SID>lint("js")<Esc>
-
 " JSHINT syntax checker
 " NOTE: NodeJS jshint required (installed via npm)
 " also added a symbolic link from node-hint to jshint
-command! SynJS2 call <SID>lint("jsh")
+command! SynJS call <SID>lint("jsh")
 nmap <silent>jshint :call <SID>lint("jsh")<Esc>
 
 function! <SID>lint(lang) "{{{
 
   let filename = expand("%")
 
-  if (a:lang == "js")
-    execute ":w !jslint " . filename
+  if (a:lang == "jsh")
+    execute ":w !jshint " . filename . " --config ~/.jshint.json"
   elseif (a:lang == "php")
     execute ":w !php -l " . filename
-  elseif (a:lang == "jsh")
-    execute ":w !jshint " . filename
   endif
 
 endfunction "}}}

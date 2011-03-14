@@ -1,2 +1,3 @@
 cp -R .vimrc ~/
 cp -R .vim ~/
+cp .jshint.json ~/
