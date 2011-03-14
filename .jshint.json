@@ -1,6 +1,7 @@
 {
   "white": true, 
-  "devel": true, 
+  "devel": true,
+  "browser": true,
   "evil": true, 
   "laxbreak": true, 
   "onevar": true, 
@@ -13,5 +14,5 @@
   "newcap": true, 
   "immed": true, 
   "indent": 2, 
-  "maxerr": 1
+  "maxerr": 50
 }
