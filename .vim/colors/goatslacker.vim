@@ -7,15 +7,15 @@ highlight clear
 let g:colors_name = "goatslacker"
 
 " Colors: {
-hi Blue   ctermfg=68          ctermbg=NONE        cterm=NONE
-hi White  ctermfg=255         ctermbg=NONE        cterm=NONE
-hi Black  ctermfg=235         ctermbg=NONE        cterm=NONE
-hi Green  ctermfg=107         ctermbg=NONE        cterm=NONE
-hi Red    ctermfg=203         ctermbg=NONE        cterm=NONE
-hi Pink   ctermfg=205         ctermbg=NONE        cterm=NONE
-hi Orange ctermfg=214         ctermbg=NONE        cterm=NONE
-hi Peach  ctermfg=222         ctermbg=NONE        cterm=NONE
-hi Purple ctermfg=153         ctermbg=NONE        cterm=NONE
+hi Blue     ctermfg=68          ctermbg=NONE        cterm=NONE
+hi White    ctermfg=255         ctermbg=NONE        cterm=NONE
+hi Black    ctermfg=235         ctermbg=NONE        cterm=NONE
+hi Green    ctermfg=107         ctermbg=NONE        cterm=NONE
+hi Red      ctermfg=203         ctermbg=NONE        cterm=NONE
+hi Pink     ctermfg=205         ctermbg=NONE        cterm=NONE
+hi Orange   ctermfg=214         ctermbg=NONE        cterm=NONE
+hi Peach    ctermfg=222         ctermbg=NONE        cterm=NONE
+hi Purple   ctermfg=153         ctermbg=NONE        cterm=NONE
 " }
 
 " SyntaxHighlighting: {
@@ -98,3 +98,22 @@ hi link htmlTagName           Blue
 " Python: {
 hi link pythonPreCondit       Blue
 " }
+
+" CSS_LESS: {
+hi link lessVariable      Blue
+hi link lessFunction      Purple
+hi link lessFuncDef       Purple
+hi link cssBraces         Peach
+hi link cssTagName        Orange
+hi link cssClassName      Peach
+hi link cssCommonAttr     Pink
+hi link cssFontAttr       Pink
+hi link cssTextAttr       Pink
+hi link cssBoxAttr        Pink
+hi link cssColorAttr      Pink
+hi link cssRenderAttr     Pink
+hi link cssTableAttr      Pink
+hi link cssAuralAttr      Pink
+hi link cssUIAttr         Pink
+hi link cssGeneratedContentAttr      Pink
+"}

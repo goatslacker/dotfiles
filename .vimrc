@@ -48,3 +48,6 @@ nmap <silent>lineno :set number!<CR>
 " Use JAKE
 " NOTE: jake required!
 nmap <silent>jake :w !jake<Esc>
+
+" Support for less
+au BufNewFile,BufRead *.less set filetype=less
