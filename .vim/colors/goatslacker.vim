@@ -20,7 +20,7 @@ hi Purple ctermfg=153         ctermbg=NONE        cterm=NONE
 
 " SyntaxHighlighting: {
 hi Normal         ctermfg=255         ctermbg=NONE        cterm=NONE
-hi Comment        ctermfg=235         ctermbg=NONE        cterm=NONE
+hi Comment        ctermfg=240         ctermbg=NONE        cterm=NONE
 hi Constant       ctermfg=68          ctermbg=NONE        cterm=NONE
 hi String         ctermfg=107         ctermbg=NONE        cterm=NONE
 hi Character      ctermfg=68          ctermbg=NONE        cterm=NONE
