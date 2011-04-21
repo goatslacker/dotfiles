@@ -1,3 +1,4 @@
+syntax on
 set t_Co=256
 color goatslacker
 
@@ -51,3 +52,5 @@ nmap <silent>jake :w !jake<Esc>
 
 " Support for less
 au BufNewFile,BufRead *.less set filetype=less
+" jsm files
+au BufNewFile,BufRead *.jsm set filetype=javascript
