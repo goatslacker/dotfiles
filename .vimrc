@@ -6,6 +6,7 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+set cursorline
 
 " PHP & JS (jslint) syntax checks
 " PHP Syntax checker
