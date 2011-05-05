@@ -19,6 +19,7 @@ hi Purple   ctermfg=153         ctermbg=NONE        cterm=NONE
 " }
 
 " SyntaxHighlighting: {
+hi CursorLine     ctermfg=NONE        ctermbg=234         cterm=NONE
 hi Normal         ctermfg=255         ctermbg=NONE        cterm=NONE
 hi Comment        ctermfg=240         ctermbg=NONE        cterm=NONE
 hi Constant       ctermfg=68          ctermbg=NONE        cterm=NONE
