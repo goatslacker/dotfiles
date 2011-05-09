@@ -1,3 +1,0 @@
-cp -R ~/.vimrc ../dotfiles/
-cp -R ~/.vim ../dotfiles/
-cp ~/.jshint.json ../dotfiles/
