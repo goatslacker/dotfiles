@@ -24,7 +24,7 @@ task("install", [], function () {
 
 }, true);
 
-task("update-git", [], function () {
+task("update", [], function () {
   files.forEach(function (file) {
     var statement = command + " " + target + file + " .";
     run(statement, file);
