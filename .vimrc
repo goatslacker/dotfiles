@@ -24,7 +24,7 @@ function! <SID>lint(lang) "{{{
   let filename = expand("%")
 
   if (a:lang == "jsh")
-    execute ":w !jshint " . filename . " --config ~/.jshint.json"
+    execute ":w !jshint " . filename . " --config ~/.jshintrc"
   elseif (a:lang == "php")
     execute ":w !php -l " . filename
   endif
