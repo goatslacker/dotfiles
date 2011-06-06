@@ -72,6 +72,8 @@ hi link javaScriptPropietaryObjects     Orange
 hi link javaScriptPropietaryMethods     Pink
 hi link javaScriptHtmlElemProperties    Purple
 hi link javaScriptEventListenerKeywords Pink
+hi link javaScriptDocType         Blue
+hi link javaScriptDocTypeNoParam  Blue
 hi link javaScriptSource          Purple
 hi link javaScriptType            Orange
 hi link javaScriptOperator        Orange
