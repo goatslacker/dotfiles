@@ -7,15 +7,17 @@ highlight clear
 let g:colors_name = "goatslacker"
 
 " Colors: {
+hi Black    ctermfg=240         ctermbg=NONE        cterm=NONE
 hi Blue     ctermfg=68          ctermbg=NONE        cterm=NONE
-hi White    ctermfg=255         ctermbg=NONE        cterm=NONE
-hi Black    ctermfg=235         ctermbg=NONE        cterm=NONE
 hi Green    ctermfg=107         ctermbg=NONE        cterm=NONE
-hi Red      ctermfg=203         ctermbg=NONE        cterm=NONE
-hi Pink     ctermfg=205         ctermbg=NONE        cterm=NONE
 hi Orange   ctermfg=214         ctermbg=NONE        cterm=NONE
 hi Peach    ctermfg=222         ctermbg=NONE        cterm=NONE
+hi Pink     ctermfg=205         ctermbg=NONE        cterm=NONE
+hi Pink2    ctermfg=211         ctermbg=NONE        cterm=NONE
 hi Purple   ctermfg=153         ctermbg=NONE        cterm=NONE
+hi Purple2  ctermfg=164         ctermbg=NONE        cterm=NONE
+hi Red      ctermfg=203         ctermbg=NONE        cterm=NONE
+hi White    ctermfg=255         ctermbg=NONE        cterm=NONE
 " }
 
 " SyntaxHighlighting: {
@@ -59,34 +61,49 @@ hi Todo           ctermfg=232         ctermbg=220         cterm=NONE
 " }
 
 " JavaScript: {
+" Other
 hi link javaScriptSpecial               Pink
 hi link javaScriptFloat                 Red
-hi link javaScriptBrowserObjects        Orange
-hi link javaScriptDOMObjects            Orange
-hi link javaScriptDOMProperties         Purple
-hi link javaScriptDOMMethods            Pink
-hi link javaScriptAjaxObjects           Orange
-hi link javaScriptAjaxProperties        Purple
-hi link javaScriptAjaxMethods           Pink
-hi link javaScriptPropietaryObjects     Orange
-hi link javaScriptPropietaryMethods     Pink
-hi link javaScriptHtmlElemProperties    Purple
-hi link javaScriptEventListenerKeywords Pink
+
+" Browser/DOM
+hi link javaScriptHtmlEvents            Pink2
+hi link javaScriptDomElemAttrs          Purple
+hi link javaScriptHtmlElemAttrs         Purple
+hi link javaScriptHtmlElemFuncs         Pink
+hi link javaScriptCssStyles             Purple
+
+" JSDoc
 hi link javaScriptDocType         Blue
 hi link javaScriptDocTypeNoParam  Blue
-hi link javaScriptSource          Purple
+
+" JavaScript
+"syntax keyword javaScriptPrototype      prototype
+hi link javaScriptPrototype       Pink2
+"syntax keyword javaScriptSource         import export
+hi link javaScriptSource          Red
+"syntax keyword javaScriptType           const undefined var void yield 
 hi link javaScriptType            Orange
+"syntax keyword javaScriptOperator       delete new in instanceof let typeof
 hi link javaScriptOperator        Orange
+"syntax keyword javaScriptBoolean        true false
 hi link javaScriptBoolean         Red
-hi link javaScriptNull            Blue
+"syntax keyword javaScriptNull           null
+hi link javaScriptNull            Purple
+"syntax keyword javaScriptThis           this self
+"syntax keyword javaScriptConditional    if else
 hi link javaScriptConditional     Peach
+"syntax keyword javaScriptRepeat         do while for
 hi link javaScriptRepeat          Peach
+"syntax keyword javaScriptBranch         break continue switch case default return
 hi link javaScriptBranch          Orange
+"syntax keyword javaScriptStatement      try catch throw with finally
 hi link javaScriptStatement       Red
-hi link javaScriptGlobalObjects   Orange
+"syntax keyword javaScriptGlobalObjects  Array Boolean Date Function Infinity JavaArray JavaClass JavaObject JavaPackage kind Math Number NaN Object Packages RegExp String Undefined java netscape sun
+hi link javaScriptGlobalObjects   Purple
+"syntax keyword javaScriptExceptions     Error EvalError RangeError ReferenceError SyntaxError TypeError URIError
 hi link javaScriptExceptions      Red
-hi link javaScriptFutureKeys      Blue
-hi link javaScriptHtmlEvents      Pink
+"syntax keyword javaScriptFutureKeys     abstract enum int short boolean export interface static byte extends long super char final native synchronized class float package throws goto private transient debugger implements protected volatile double import public
+hi link javaScriptFutureKeys      Black
 "  }
 
 " PHP: {
