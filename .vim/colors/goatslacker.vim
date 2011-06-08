@@ -17,6 +17,7 @@ hi Pink2    ctermfg=211         ctermbg=NONE        cterm=NONE
 hi Purple   ctermfg=153         ctermbg=NONE        cterm=NONE
 hi Purple2  ctermfg=164         ctermbg=NONE        cterm=NONE
 hi Red      ctermfg=203         ctermbg=NONE        cterm=NONE
+hi Silver   ctermfg=245         ctermbg=NONE        cterm=NONE
 hi White    ctermfg=255         ctermbg=NONE        cterm=NONE
 " }
 
@@ -75,6 +76,7 @@ hi link javaScriptCssStyles             Purple
 " JSDoc
 hi link javaScriptDocType         Blue
 hi link javaScriptDocTypeNoParam  Blue
+hi link javaScriptDocParam        Silver
 
 " JavaScript
 "syntax keyword javaScriptPrototype      prototype
