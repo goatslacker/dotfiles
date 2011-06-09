@@ -10,6 +10,8 @@
 
 [alias]
   cl = clone
-  cm = commit
+  cm = commit -a
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
+  pl = pull origin master
+  ps = push origin master
   st = status
