@@ -1,0 +1,15 @@
+[user]
+	email = josh@goatslacker.com
+	name = Josh Perez
+
+[github]
+  user = goatslacker
+
+[color]
+  ui = auto
+
+[alias]
+  cl = clone
+  cm = commit
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
+  st = status

@@ -1,0 +1,4 @@
+[ui]
+username = Josh Perez <josh.perez@palm.com>
+verbose = True
+merge = internal:merge

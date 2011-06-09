@@ -1,7 +1,7 @@
 var sys = require("sys"),
     exec = require('child_process').exec,
     command = "cp -R",
-    files = ['.vimrc', '.vim', '.jshintrc'],
+    files = ['.vimrc', '.vim', '.jshintrc', '.gitconfig', '.hgrc'],
     target = '~/';
 
 
