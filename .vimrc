@@ -7,6 +7,7 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set cursorline
+set incsearch
 
 " PHP & JS (jslint) syntax checks
 " PHP Syntax checker
@@ -42,3 +43,6 @@ nmap <silent>jake :w !jake<Esc>
 au BufNewFile,BufRead *.less set filetype=less
 " jsm files
 au BufNewFile,BufRead *.jsm set filetype=javascript
+
+" Turn off tabs->spaces for Makefile
+:autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
