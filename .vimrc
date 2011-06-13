@@ -1,6 +1,6 @@
 syntax on
 set t_Co=256
-color goatslacker
+color mango
 
 set softtabstop=2
 set shiftwidth=2
@@ -30,19 +30,6 @@ function! <SID>lint(lang) "{{{
   endif
 
 endfunction "}}}
-
-" PHPCS
-" NOTE: phpcs required (installed via PEAR)
-" TODO - configure coding standard
-" TODO output into separate error window with nice pretty colors
-function! <SID>RunPhpcs() "{{{
-  let l:filename=@%
-  let l:phpcs_output=system('phpcs '.l:filename)
-  echo l:phpcs_output
-endfunction "}}}
-
-command! Phpcs call <SID>RunPhpcs()
-"nmap <silent>phpcs :call <SID>RunPhpcs()<Esc>
 
 " Toggle Numbers On | Off
 nmap <silent>lineno :set number!<CR>

@@ -1,10 +1,10 @@
-" Vim color file -- goatslacker
+" Vim color file -- Mango
 " Maintainer:   Josh Perez <josh@goatslacker.com>
-" Last Change:  2011 Feb 15
+" Version: 1.0
 
 set background=dark
 highlight clear
-let g:colors_name = "goatslacker"
+let g:colors_name = "mango"
 
 " Colors: {
 hi Black    ctermfg=240         ctermbg=NONE        cterm=NONE
