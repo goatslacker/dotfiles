@@ -11,6 +11,7 @@
 [alias]
   cl = clone
   cm = commit -a
+  df = diff
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   pl = pull origin master
   ps = push origin master
