@@ -2,3 +2,23 @@
 username = Josh Perez <josh.perez@palm.com>
 verbose = True
 merge = internal:merge
+
+[extensions]
+color =
+
+[color]
+status.modified = blue
+status.added = green
+status.removed = white red_background
+status.deleted = red underline
+status.unknown = yellow
+status.ignored = black
+diff.diffline = blue bold
+diff.extended = cyan bold
+diff.file_a = black bold
+diff.file_b = black bold
+diff.hunk = blue
+diff.deleted = red
+diff.inserted = green
+diff.changed = white underline
+diff.trailingwhitespace = bold white_background
