@@ -6,7 +6,22 @@
   user = goatslacker
 
 [color]
-  ui = auto
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = cyan
+[color "diff"]
+  meta = black bold
+  frag = blue
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = blue
+  untracked = yellow
 
 [alias]
   cl = clone
