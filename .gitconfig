@@ -24,9 +24,14 @@
   untracked = yellow
 
 [alias]
+  br = branch
   cl = clone
+  ci = commit
   cm = commit -a
+  co = checkout
+  dc = diff --cached
   df = diff
+  ign = ls-files -o -i --exclude-standard
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   pl = pull origin master
   ps = push origin master
