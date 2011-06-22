@@ -11,12 +11,16 @@ set incsearch
 
 " JSHINT syntax checker
 nmap <silent>jshint :call <SID>lint("jsh")<Esc>
-
 function! <SID>lint(lang) "{{{
-
   let filename = expand("%")
   execute ":w !jshint " . filename . " --config ~/.jshintrc"
+endfunction "}}}
 
+" Node
+nmap <silent>jsnode :call <SID>nodejs()<Esc>
+function! <SID>nodejs() "{{{
+  let filename = expand("%")
+  execute ":w !node " . filename
 endfunction "}}}
 
 " Toggle Numbers On | Off
