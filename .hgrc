@@ -3,6 +3,10 @@ username = Josh Perez <josh.perez@palm.com>
 verbose = True
 merge = internal:merge
 
+[auth]
+bb.prefix = http://Bitbucket.org
+bb.username = joshperez
+
 [extensions]
 color =
 

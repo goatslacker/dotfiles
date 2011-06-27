@@ -17,6 +17,7 @@ function! <SID>lint(lang) "{{{
 endfunction "}}}
 
 " Node
+command! NodeJS call <SID>nodejs()
 nmap <silent>jsnode :call <SID>nodejs()<Esc>
 function! <SID>nodejs() "{{{
   let filename = expand("%")
