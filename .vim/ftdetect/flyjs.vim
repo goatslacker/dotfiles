@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.fly setf fly
+au BufNewFile,BufRead *.fly setf flyjs
