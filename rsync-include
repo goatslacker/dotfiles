@@ -1,0 +1,5 @@
+.vim/
+.vimrc
+.gitconfig
+.hgrc
+.jshintrc
