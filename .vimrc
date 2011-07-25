@@ -32,4 +32,4 @@ nmap <silent>lineno :set number!<CR>
 nmap <silent>jake :w !jake<Esc>
 
 " Turn off tabs->spaces for Makefile
-:autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
+:autocmd BufNewFile,BufRead [Mm]akefile* setlocal noexpandtab
