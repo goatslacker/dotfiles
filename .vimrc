@@ -33,6 +33,7 @@ map <Leader>b :w !make<CR>
 map <Leader>f :w !forge<CR>
 " Toggle Numbers On | Off
 map <Leader>n :set number!<CR>
+map <Leader>w :NERDTreeToggle<CR>
 
 " Turn off tabs->spaces for Makefile
 :autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
