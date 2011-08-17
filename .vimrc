@@ -7,29 +7,35 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set cursorline
+
+" Searching
 set incsearch
 
 " JSHINT syntax checker
-nmap <silent>jshint :call <SID>lint("jsh")<Esc>
-function! <SID>lint(lang) "{{{
+function! <SID>lint() "{{{
   let filename = expand("%")
   execute ":w !jshint " . filename . " --config ~/.jshintrc"
 endfunction "}}}
 
 " Node
-command! NodeJS call <SID>nodejs()
-nmap <silent>jsnode :call <SID>nodejs()<Esc>
 function! <SID>nodejs() "{{{
   let filename = expand("%")
   execute ":w !node " . filename
 endfunction "}}}
 
-" Toggle Numbers On | Off
-nmap <silent>lineno :set number!<CR>
+" Silent
+nmap <silent>jake :w !jake<ESC>
+nmap <silent>jshint :call <SID>lint()<Esc>
+nmap <silent>jsnode :call <SID>nodejs()<Esc>
 
-" Use JAKE
-" NOTE: jake required!
-nmap <silent>jake :w !jake<Esc>
+" Leader
+map <Leader>b :w !make<CR>
+map <Leader>f :w !forge<CR>
+" Toggle Numbers On | Off
+map <Leader>n :set number!<CR>
 
 " Turn off tabs->spaces for Makefile
-:autocmd BufNewFile,BufRead [Mm]akefile* setlocal noexpandtab
+:autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
+
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
