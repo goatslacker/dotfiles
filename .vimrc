@@ -17,9 +17,6 @@ set showcmd
 " Searching
 set incsearch
 
-" enable mouse support
-set mouse=a
-
 " JSHINT syntax checker
 function! <SID>lint() "{{{
   let filename = expand("%")
