@@ -23,22 +23,24 @@ function! <SID>lint() "{{{
   execute ":w !jshint " . filename . " --config ~/.jshintrc"
 endfunction "}}}
 
-" Node
-function! <SID>nodejs() "{{{
+function! <SID>R() "{{{
   let filename = expand("%")
-  execute ":w !node " . filename
+
+  if &filetype == 'javascript'
+    execute ":w !node " . filename
+  elseif &filetype == 'python'
+    execute ":w !python " . filename
+  endif
 endfunction "}}}
 
-" Silent
-nmap <silent>jake :w !jake<ESC>
-nmap <silent>jshint :call <SID>lint()<Esc>
-nmap <silent>jsnode :call <SID>nodejs()<Esc>
 
 " Leader
 map <Leader>b :w !make<CR>
 map <Leader>f :w !forge<CR>
 " Toggle Numbers On | Off
+map <Leader>l :call <SID>lint()<CR>
 map <Leader>n :set number!<CR>
+map <Leader>p :call <SID>R()<CR>
 map <Leader>w :NERDTreeToggle<CR>
 
 " Use tabs for Makefile
