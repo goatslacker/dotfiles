@@ -62,5 +62,5 @@
   "v8": true,
   "white": true,
 
-  "auto-indent": true
+  "auto_indent": true
 }
