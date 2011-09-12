@@ -15,7 +15,7 @@
   "fragment": false,
   "indent": 2,
   "maxerr": 50,
-  "maxlen": 160,
+  "maxlen": 145,
   "newcap": true,
   "node": true,
   "nomen": false,
@@ -60,5 +60,7 @@
   "sub": false,
   "strict": false,
   "v8": true,
-  "white": true
+  "white": true,
+
+  "auto_indent": true
 }
