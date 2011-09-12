@@ -36,3 +36,5 @@
   pl = pull origin master
   ps = push origin master
   st = status
+[core]
+	autocrlf = true
