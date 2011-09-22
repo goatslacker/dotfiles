@@ -7,7 +7,7 @@ all:
 	echo "\n"
 
 install:
-	@rsync -v -r --include-from=rsync-include --exclude=/* . ~/.
+	@rsync --verbose --recursive --exclude-from=rsync-include . ~/.
 
 update:
-	@rsync -v -r --include-from=rsync-include --exclude=/* ~/. .
+	@rsync --verbose --recursive --exclude-from=rsync-include ~/. .

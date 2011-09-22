@@ -1,5 +1,11 @@
-.vim/
-.vimrc
-.gitconfig
-.hgrc
-.jshintrc
++ .vim/
++ .gconf/apps/gnome-terminal/
++ .gconf/apps/
++ .gconf/
+- .gconf/apps/*
+- .gconf/*
++ .vimrc
++ .gitconfig
++ .hgrc
++ .jshintrc
+- /*
