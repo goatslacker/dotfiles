@@ -31,6 +31,7 @@
   co = checkout
   dc = diff --cached
   df = diff --color
+  dfst = diff --stat
   ign = ls-files -o -i --exclude-standard
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   msg = commit --allow-empty -m
