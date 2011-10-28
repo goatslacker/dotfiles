@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="prev_tab" mtime="1305578141" type="string">
-		<stringvalue>&lt;Shift&gt;Left</stringvalue>
-	</entry>
-	<entry name="next_tab" mtime="1305578137" type="string">
-		<stringvalue>&lt;Shift&gt;Right</stringvalue>
-	</entry>
-</gconf>
