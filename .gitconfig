@@ -37,4 +37,5 @@
   msg = commit --allow-empty -m
   pl = pull origin master
   ps = push origin master
+  pp = push origin gh-pages
   st = status

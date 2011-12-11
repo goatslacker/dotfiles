@@ -62,5 +62,6 @@
   "strict": false,
   "white": true,
 
-  "auto_indent": true
+  "auto_indent": true,
+  "indentpref": "spaces"
 }
