@@ -5,6 +5,10 @@ syntax on
 set t_Co=256
 color mango
 
+set autoindent
+set smartindent
+set pastetoggle=<F2>
+
 " whitespace
 set softtabstop=2
 set shiftwidth=2
