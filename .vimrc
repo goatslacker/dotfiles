@@ -5,6 +5,7 @@ syntax on
 set t_Co=256
 color mango
 
+" auto indent options
 set autoindent
 set smartindent
 set pastetoggle=<F2>
@@ -14,6 +15,8 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+
+" sets the cursor line to be highlighted
 set cursorline
 
 set showcmd
@@ -21,12 +24,16 @@ set showcmd
 " Searching
 set incsearch
 
+
 " JSHINT syntax checker
 function! <SID>lint() "{{{
   let filename = expand("%")
   execute ":w !jshint " . filename . " --config ~/.jshintrc"
 endfunction "}}}
 
+
+" Function that runs scripts while still editing file
+" supports JavaScript & Python
 function! <SID>R() "{{{
   let filename = expand("%")
 
@@ -38,23 +45,30 @@ function! <SID>R() "{{{
 endfunction "}}}
 
 
-" Leader
+" Leader keyboard shortcuts
+"\b will run Makefile.
 map <Leader>b :w !make<CR>
-map <Leader>f :w !forge<CR>
-" Toggle Numbers On | Off
+"\l runs JSHint on file
 map <Leader>l :call <SID>lint()<CR>
+"\n Toggle Numbers On | Off
 map <Leader>n :set number!<CR>
+"\p Executes the current file
 map <Leader>p :call <SID>R()<CR>
+"\w will show NERDTree
 map <Leader>w :NERDTreeToggle<CR>
+
 
 " Use tabs for Makefile
 autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
 
+
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
+
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
 
 " Restore cursor position to where it was before
 augroup JumpCursorOnEdit
@@ -85,6 +99,8 @@ augroup END
 "}}}
 
 
+" Lets me know how much time I've spent editing a file
+" Keyboard shortcut -> \dt
 augroup TimeSpentEditing
 au!
 au BufWinEnter * if !exists('b:tstart')|let b:tstart=reltime()|en
