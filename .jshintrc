@@ -44,6 +44,7 @@
   "eqeqeq": true,
   "eqnull": false,
   "evil": false,
+  "expr": true,
   "forin": true,
   "immed": true,
   "laxbreak": true,

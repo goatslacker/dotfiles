@@ -83,3 +83,20 @@ augroup JumpCursorOnEdit
 augroup END
 
 "}}}
+
+
+augroup TimeSpentEditing
+au!
+au BufWinEnter * if !exists('b:tstart')|let b:tstart=reltime()|en
+augroup END
+
+function! TimeSpentEditing()
+  let secs = str2nr(reltimestr(reltime(b:tstart)))
+  let hours = secs / 3600
+  let minutes = (secs - hours * 3600) / 60
+  let seconds = secs - hours * 3600 - minutes * 60
+  return printf("%d:%02d:%02d", hours, minutes, seconds)
+endfunction
+
+com! TimeSpentEditing echo TimeSpentEditing()
+map <silent> <leader>dt :TimeSpentEditing<CR>
