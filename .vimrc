@@ -8,7 +8,7 @@ color mango
 " auto indent options
 set autoindent
 set smartindent
-set pastetoggle=<F2>
+set pastetoggle=<Leader>a
 
 " whitespace
 set softtabstop=2
@@ -116,3 +116,16 @@ endfunction
 
 com! TimeSpentEditing echo TimeSpentEditing()
 map <silent> <leader>dt :TimeSpentEditing<CR>
+
+
+" Function to find in current directory
+function! FindPattern()
+  call inputsave()
+  let name = input('find: ')
+  call inputrestore()
+  execute "vimgrep /" . expand(name) . "/j **"
+  execute ":cw"
+endfunction
+
+" Ctrl-F for grep
+map <c-f> :call FindPattern()<CR>
