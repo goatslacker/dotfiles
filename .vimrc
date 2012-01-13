@@ -20,6 +20,7 @@ set expandtab
 set cursorline
 
 set showcmd
+set laststatus=2
 
 " Searching
 set incsearch
