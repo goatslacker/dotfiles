@@ -1,9 +1,9 @@
 " Vim color file -- Mango
 " Maintainer:   Josh Perez <josh@goatslacker.com>
-" Version: 1.0
+" Version: 1.2
 
 set background=dark
-highlight clear
+set t_Co=256
 let g:colors_name = "mango"
 
 " Colors: {
@@ -83,7 +83,7 @@ hi link javaScriptDocParam        Silver
 hi link javaScriptPrototype       Pink2
 "syntax keyword javaScriptSource         import export
 hi link javaScriptSource          Red
-"syntax keyword javaScriptType           const undefined var void yield 
+"syntax keyword javaScriptType           const undefined var void yield
 hi link javaScriptType            Orange
 "syntax keyword javaScriptOperator       delete new in instanceof let typeof
 hi link javaScriptOperator        Orange
