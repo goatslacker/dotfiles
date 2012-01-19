@@ -2,7 +2,7 @@ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/cursor_shape" \
 --type string "underline"
 
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/font" \
---type string "Inconsolata Medium 11"
+--type string "Inconsolata-dz-Powerline dzForPowerline 12"
 
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_system_font" \
 --type bool false
