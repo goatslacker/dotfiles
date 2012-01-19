@@ -1,71 +1,89 @@
 set nocompatible
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" > General
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntax highlighting
 syntax on
 set t_Co=256
 color mango
+" history
+set history=900
+" Turns backup off
+set nobackup
+set nowb
 
-" auto indent options
-set autoindent
-set smartindent
-set pastetoggle=<Leader>a
 
-" whitespace
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" > Text
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 2 space indent
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
+" Spaces are better than tabs
 set expandtab
+" auto indent options
+set autoindent
+set smartindent
+" wrap lines
+set wrap
 
-" sets the cursor line to be highlighted
-set cursorline
-
-set showcmd
-set laststatus=2
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" > UI
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Always show 7 lines on the screen
+set so=7
+" wildmenu for tab completion
+set wildmenu
+" encoding
+set encoding=utf8
+set ffs=unix
+" Paste toggle so formatting is not lost on paste
+set pastetoggle=<Leader>a
 " Searching
 set incsearch
+" sets the cursor line to be highlighted
+set cursorline
+" Do not tell me if I'm in insert or visual mode
+set noshowmode
+" in Visual Mode show how many lines I'm selecting
+set showcmd
+" for vim-powerline
+set laststatus=2
+" No error sounds/visual
+set noerrorbells
+set novisualbell
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" > Keyboard Shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" JSHINT syntax checker
-function! <SID>lint() "{{{
-  let filename = expand("%")
-  execute ":w !jshint " . filename . " --config ~/.jshintrc"
-endfunction "}}}
-
-
-" Function that runs scripts while still editing file
-" supports JavaScript & Python
-function! <SID>R() "{{{
-  let filename = expand("%")
-
-  if &filetype == 'javascript'
-    execute ":w !node " . filename
-  elseif &filetype == 'python'
-    execute ":w !python " . filename
-  endif
-endfunction "}}}
-
-
-" Leader keyboard shortcuts
-"\b will run Makefile.
+" Fast saving
+map <leader>w :w!<CR>
+" Run Makefile
 map <Leader>b :w !make<CR>
-"\l runs JSHint on file
+" JSHint file
 map <Leader>l :call <SID>lint()<CR>
-"\n Toggle Numbers On | Off
+" Toggle Numbers On | Off
 map <Leader>n :set number!<CR>
-"\p Executes the current file
+" Executes the current file
 map <Leader>p :call <SID>R()<CR>
-"\w will show NERDTree
-map <Leader>w :NERDTreeToggle<CR>
+" NERDTree
+map <Leader>t :NERDTreeToggle<CR>
+" Editing .vimrc
+map <Leader>e :e! ~/.vimrc<CR>
+" Ctrl-F for grep
+map <c-f> :call FindPattern()<CR>
 
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
 " Use tabs for Makefile
 autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
 
-
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -128,5 +146,24 @@ function! FindPattern()
   execute ":cw"
 endfunction
 
-" Ctrl-F for grep
-map <c-f> :call FindPattern()<CR>
+
+" JSHINT syntax checker
+function! <SID>lint() "{{{
+  let filename = expand("%")
+  execute ":w !jshint " . filename . " --config ~/.jshintrc"
+endfunction "}}}
+
+
+" Function that runs scripts while still editing file
+" supports JavaScript & Python
+function! <SID>R() "{{{
+  let filename = expand("%")
+
+  if &filetype == 'javascript'
+    execute ":w !node " . filename
+  elseif &filetype == 'python'
+    execute ":w !python " . filename
+  endif
+endfunction "}}}
+
+
