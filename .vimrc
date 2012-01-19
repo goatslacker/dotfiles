@@ -48,12 +48,19 @@ set cursorline
 " Do not tell me if I'm in insert or visual mode
 set noshowmode
 " in Visual Mode show how many lines I'm selecting
-set showcmd
+"set showcmd
+" Set the cmdheight to zero (only works with Josh's compiled version of vim)
+if v:version >= 703
+  set cmdheight=0
+endif
 " for vim-powerline
 set laststatus=2
+let g:Powerline_symbols = 'fancy'
 " No error sounds/visual
 set noerrorbells
 set novisualbell
+" Backspace config
+set backspace=eol,start,indent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts
