@@ -50,7 +50,7 @@ set noshowmode
 " in Visual Mode show how many lines I'm selecting
 "set showcmd
 " Set the cmdheight to zero (only works with Josh's compiled version of vim)
-if v:version >= 703
+if exists("v:goatslacker")
   set cmdheight=0
 endif
 " for vim-powerline

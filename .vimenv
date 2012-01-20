@@ -1,0 +1,5 @@
+#!/bin/bash
+export CONF_OPT_FEAT='--with-features=huge'
+export CONF_OPT_PYTHON='--enable-pythoninterp'
+export CONF_OPT_RUBY='--enable-rubyinterp'
+export CONF_OPT_COMPBY='"--with-compiledby=josh@goatslacker.com"'
