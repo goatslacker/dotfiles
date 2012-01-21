@@ -32,4 +32,4 @@ gnome:
 	gconftool-2 --set "/apps/gnome-terminal/keybindings/prev_tab" --type string "<Shift>Left" && \
 	gconftool-2 --set "/apps/gnome-terminal/keybindings/next_tab" --type string "<Shift>Right"
 
-.PHONY: vim linux
+.PHONY: gnome
