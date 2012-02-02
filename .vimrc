@@ -6,6 +6,7 @@ set nocompatible
 " syntax highlighting
 syntax on
 set t_Co=256
+set background=light
 color mango
 " history
 set history=900
