@@ -57,7 +57,7 @@
   "onevar": false,
   "passfail": false,
   "plusplus": true,
-  "regexp": true,
+  "regexp": false,
   "undef": true,
   "sub": false,
   "strict": false,
