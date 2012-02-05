@@ -40,3 +40,4 @@
   ps = push origin master
   po = push origin gh-pages
   st = status
+  switch = checkout
