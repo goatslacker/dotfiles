@@ -18,13 +18,13 @@ if !exists("main_syntax")
   let main_syntax = 'javascript'
 endif
 
-"" Drop fold if it set but VIM doesn't support it.
+"" Drop fold if it is set but VIM doesn't support it.
 let b:javascript_fold='true'
 if version < 600    " Don't support the old version
   unlet! b:javascript_fold
 endif
 
-"" dollar sigh is permittd anywhere in an identifier
+"" dollar sign is permittd anywhere in an identifier
 setlocal iskeyword+=$
 
 syntax sync fromstart
@@ -48,7 +48,7 @@ if !exists("javascript_ignore_javaScriptdoc")
   syntax region javaScriptDocComment      matchgroup=javaScriptComment start="/\*\*\s*"  end="\*/" contains=javaScriptDocTags,javaScriptCommentTodo,javaScriptCvsTag,@javaScriptHtml,@Spell fold
 
   " tags containing a param
-  syntax match  javaScriptDocTags         contained "@\(augments\|base\|borrows\|class\|constructs\|default\|exception\|exports\|extends\|file\|kind\|member\|memberOf\|module\|name\|namespace\|optional\|requires\|title\|throws\|version\)\>" nextgroup=javaScriptDocParam skipwhite
+  syntax match  javaScriptDocTags         contained "@\(augments\|base\|borrows\|class\|constructs\|default\|exception\|exports\|extends\|file\|member\|memberOf\|module\|name\|namespace\|optional\|requires\|title\|throws\|version\)\>" nextgroup=javaScriptDocParam skipwhite
   " tags containing type and param
   syntax match  javaScriptDocTags         contained "@\(argument\|param\|property\)\>" nextgroup=javaScriptDocType skipwhite
   " tags containing type but no param
@@ -58,8 +58,10 @@ if !exists("javascript_ignore_javaScriptdoc")
   " other tags (no extra syntax)
   syntax match  javaScriptDocTags         contained "@\(access\|addon\|alias\|author\|beta\|constant\|constructor\|copyright\|deprecated\|description\|event\|example\|exec\|field\|fileOverview\|fileoverview\|function\|global\|ignore\|inner\|license\|overview\|private\|protected\|project\|public\|readonly\|since\|static\)\>"
 
-  syntax match  javaScriptDocType         contained "\%(#\|\"\|{\|}\|\w\|\.\|:\|\/\)\+" nextgroup=javaScriptDocParam skipwhite
-  syntax match  javaScriptDocTypeNoParam  contained "\%(#\|\"\|{\|}\|\w\|\.\|:\|\/\)\+"
+  syntax region javaScriptDocType         start="{" end="}" oneline contained nextgroup=javaScriptDocParam skipwhite
+  syntax match  javaScriptDocType         contained "\%(#\|\"\|\w\|\.\|:\|\/\)\+" nextgroup=javaScriptDocParam skipwhite
+  syntax region javaScriptDocTypeNoParam  start="{" end="}" oneline contained
+  syntax match  javaScriptDocTypeNoParam  contained "\%(#\|\"\|\w\|\.\|:\|\/\)\+"
   syntax match  javaScriptDocParam        contained "\%(#\|\"\|{\|}\|\w\|\.\|:\|\/\)\+"
   syntax region javaScriptDocSeeTag       contained matchgroup=javaScriptDocSeeTag start="{" end="}" contains=javaScriptDocTags
 
@@ -72,22 +74,22 @@ syntax case match
 syntax match   javaScriptSpecial        "\\\d\d\d\|\\x\x\{2\}\|\\u\x\{4\}\|\\."
 syntax region  javaScriptStringD        start=+"+  skip=+\\\\\|\\$"+  end=+"+  contains=javaScriptSpecial,@htmlPreproc
 syntax region  javaScriptStringS        start=+'+  skip=+\\\\\|\\$'+  end=+'+  contains=javaScriptSpecial,@htmlPreproc
-syntax region  javaScriptRegexpCharClass start=+\[\]\|\[^\]\|\[+ end=+\]+ contained
+syntax region  javaScriptRegexpCharClass start=+\[+ end=+\]+ contained
 syntax region  javaScriptRegexpString   start=+\(\(\(return\|case\)\s\+\)\@<=\|\(\([)\]"']\|\d\|\w\)\s*\)\@<!\)/\(\*\|/\)\@!+ skip=+\\\\\|\\/+ end=+/[gim]\{,3}+ contains=javaScriptSpecial,javaScriptRegexpCharClass,@htmlPreproc oneline
 syntax match   javaScriptNumber         /\<-\=\d\+L\=\>\|\<0[xX]\x\+\>/
 syntax match   javaScriptFloat          /\<-\=\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%([eE][+-]\=\d\+\)\=\>/
-syntax match   javaScriptLabel          /\(?\s*\)\@<!\<\w\+\(\s*:\)\@=/
+syntax match   javaScriptLabel          /\<\w\+\(\s*:\)\@=/
 
 "" JavaScript Prototype
 syntax keyword javaScriptPrototype      prototype
 
-"" Programm Keywords
+"" Program Keywords
 syntax keyword javaScriptSource         import export
 syntax keyword javaScriptType           const undefined var void yield 
 syntax keyword javaScriptOperator       delete new in instanceof let typeof
 syntax keyword javaScriptBoolean        true false
 syntax keyword javaScriptNull           null
-syntax keyword javaScriptThis           this self
+syntax keyword javaScriptThis           this
 
 "" Statement Keywords
 syntax keyword javaScriptConditional    if else
@@ -95,7 +97,7 @@ syntax keyword javaScriptRepeat         do while for
 syntax keyword javaScriptBranch         break continue switch case default return
 syntax keyword javaScriptStatement      try catch throw with finally
 
-syntax keyword javaScriptGlobalObjects  Array Boolean Date Function Infinity JavaArray JavaClass JavaObject JavaPackage kind Math Number NaN Object Packages RegExp String Undefined java netscape sun
+syntax keyword javaScriptGlobalObjects  Array Boolean Date Function Infinity JavaArray JavaClass JavaObject JavaPackage Math Number NaN Object Packages RegExp String Undefined java netscape sun
 
 syntax keyword javaScriptExceptions     Error EvalError RangeError ReferenceError SyntaxError TypeError URIError
 
@@ -151,10 +153,13 @@ endif "DOM/HTML/CSS
 
 
 "" Code blocks
-syntax cluster javaScriptAll       contains=javaScriptComment,javaScriptLineComment,javaScriptDocComment,javaScriptStringD,javaScriptStringS,javaScriptRegexpString,javaScriptNumber,javaScriptFloat,javaScriptLabel,javaScriptSource,javaScriptThis,javaScriptType,javaScriptOperator,javaScriptBoolean,javaScriptNull,javaScriptFunction,javaScriptConditional,javaScriptRepeat,javaScriptBranch,javaScriptStatement,javaScriptGlobalObjects,javaScriptExceptions,javaScriptFutureKeys,javaScriptDomErrNo,javaScriptDomNodeConsts,javaScriptHtmlEvents,javaScriptDotNotation
+" there is a name collision with javaScriptExpression in html.vim, hence the use of the '2' here
+syntax cluster javaScriptExpression2 contains=javaScriptComment,javaScriptLineComment,javaScriptDocComment,javaScriptStringD,javaScriptStringS,javaScriptRegexpString,javaScriptNumber,javaScriptFloat,javaScriptSource,javaScriptThis,javaScriptType,javaScriptOperator,javaScriptBoolean,javaScriptNull,javaScriptFunction,javaScriptGlobalObjects,javaScriptExceptions,javaScriptFutureKeys,javaScriptDomErrNo,javaScriptDomNodeConsts,javaScriptHtmlEvents,javaScriptDotNotation,javaScriptBracket,javaScriptParen,javaScriptBlock,javaScriptParenError
+syntax cluster javaScriptAll       contains=@javaScriptExpression2,javaScriptLabel,javaScriptConditional,javaScriptRepeat,javaScriptBranch,javaScriptStatement,javaScriptTernaryIf
 syntax region  javaScriptBracket   matchgroup=javaScriptBracket transparent start="\[" end="\]" contains=@javaScriptAll,javaScriptParensErrB,javaScriptParensErrC,javaScriptBracket,javaScriptParen,javaScriptBlock,@htmlPreproc
 syntax region  javaScriptParen     matchgroup=javaScriptParen   transparent start="("  end=")"  contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrC,javaScriptParen,javaScriptBracket,javaScriptBlock,@htmlPreproc
 syntax region  javaScriptBlock     matchgroup=javaScriptBlock   transparent start="{"  end="}"  contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrB,javaScriptParen,javaScriptBracket,javaScriptBlock,@htmlPreproc 
+syntax region  javaScriptTernaryIf matchgroup=javaScriptTernaryIfOperator start=+?+  end=+:+  contains=@javaScriptExpression2
 
 "" catch errors caused by wrong parenthesis
 syntax match   javaScriptParensError    ")\|}\|\]"
@@ -201,6 +206,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptDocParam             Label
   HiLink javaScriptStringS              String
   HiLink javaScriptStringD              String
+  HiLink javaScriptTernaryIfOperator    Conditional
   HiLink javaScriptRegexpString         String
   HiLink javaScriptRegexpCharClass      Character
   HiLink javaScriptCharacter            Character
