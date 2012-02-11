@@ -40,4 +40,6 @@
   ps = push origin master
   po = push origin gh-pages
   st = status
+  stage = add
   switch = checkout
+  unstage = reset HEAD
