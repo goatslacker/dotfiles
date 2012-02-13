@@ -42,7 +42,7 @@
     exe "hi Conditional "     .Peach
     exe "hi Debug "           .Blue
     exe "hi Define "          .Peach
-    exe "hi Delimiter "       .White
+    exe "hi Delimiter "       .Silver
     exe "hi Exception "       .Red
     exe "hi Float "           .Red
     exe "hi Function "        .Pink
@@ -62,7 +62,7 @@
     exe "hi SpecialChar "     .Pink
     exe "hi SpecialComment "  .Blue
     exe "hi Statement "       .Orange
-    exe "hi StorageClass "    .White
+    exe "hi StorageClass "    .Purple
     exe "hi String "          .Green
     exe "hi Structure "       .Peach
     exe "hi Tag "             .Blue
