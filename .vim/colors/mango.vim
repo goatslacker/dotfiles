@@ -118,6 +118,10 @@
   endif
 " }}}
 
+" Syntax Overrides {{{
+hi link javaScriptFutureKeys Comment
+" }}}
+
 " MIT LICENSE {{{
 " The MIT License (MIT)
 " Copyright 2012 Josh Perez, http://www.goatslacker.com
