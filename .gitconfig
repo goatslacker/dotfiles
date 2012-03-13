@@ -36,6 +36,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   msg = commit --allow-empty -m
   new = checkout -b
+  nuke = reset --hard HEAD
   pl = pull origin master
   ps = push origin master
   po = push origin gh-pages
