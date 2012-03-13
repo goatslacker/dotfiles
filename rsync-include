@@ -3,4 +3,6 @@
 + .gitconfig
 + .hgrc
 + .jshintrc
++ .zshrc
++ .oh-my-zsh/
 - /*
