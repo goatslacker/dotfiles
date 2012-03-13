@@ -30,7 +30,7 @@ function prompt_char() {
   echo "%{$fg[red]%}☯%{$reset_color%}"
 }
 
-PROMPT='%{$fg_bold[red]%}冷静%{$reset_color%} %{$fg_bold[magenta]%}%n%{$reset_color%} in %{$fg_bold[magenta]%}${PWD/#$HOME/~}%{$reset_color%}
+PROMPT='%{$fg[red]%}冷静%{$reset_color%} %{$fg[magenta]%}%n%{$reset_color%} in %{$fg[magenta]%}${PWD/#$HOME/~}%{$reset_color%}
 %! $(prompt_char) : '
 
 RPROMPT='$(git_prompt_short_sha)$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
