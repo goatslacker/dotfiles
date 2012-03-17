@@ -25,12 +25,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}✭"
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$fg_bold[blue]%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
-function prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
-  echo "%{$fg[red]%}☯%{$reset_color%}"
-}
-
 PROMPT='%{$fg[red]%}冷静%{$reset_color%} %{$fg[magenta]%}%n%{$reset_color%} in %{$fg[magenta]%}${PWD/#$HOME/~}%{$reset_color%}
-%! $(prompt_char) : '
+%! λ '
 
 RPROMPT='$(git_prompt_short_sha)$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
