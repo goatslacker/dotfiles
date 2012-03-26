@@ -52,6 +52,7 @@
     exe "hi Include "         .Purple
     exe "hi Keyword "         .Peach
     exe "hi Label "           .Blue
+    exe "hi LineNr "          .Gray
     exe "hi Macro "           .Purple
     exe "hi Normal "          .Black
     exe "hi Number "          .Red
@@ -94,6 +95,7 @@
     exe "hi Include "         .Purple
     exe "hi Keyword "         .Peach
     exe "hi Label "           .Peach
+    exe "hi LineNr "          .Black
     exe "hi Macro "           .Purple
     exe "hi Normal "          .White
     exe "hi Number "          .Red

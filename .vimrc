@@ -15,6 +15,19 @@ set nobackup
 set nowb
 
 
+"""
+" > Getting rid of my bad habits
+"""
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Text
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -44,6 +57,7 @@ set ffs=unix
 set pastetoggle=<Leader>a
 " Searching
 set incsearch
+set hlsearch
 " sets the cursor line to be highlighted
 set cursorline
 " Do not tell me if I'm in insert or visual mode
@@ -62,6 +76,8 @@ set noerrorbells
 set novisualbell
 " Backspace config
 set backspace=eol,start,indent
+" Relative line number
+set rnu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts
