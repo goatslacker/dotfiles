@@ -54,7 +54,7 @@ set wildmenu
 set encoding=utf8
 set ffs=unix
 " Paste toggle so formatting is not lost on paste
-set pastetoggle=<Leader>a
+set pastetoggle=<F2>
 " Searching
 set incsearch
 set hlsearch
@@ -89,6 +89,8 @@ map <leader>w :w!<CR>
 map <Leader>b :w !make<CR>
 " JSHint file
 map <Leader>l :call <SID>lint()<CR>
+" call fixmyjs on file
+map <Leader>k :execute ":w !fixmyjs " . expand("%")<CR>:edit<CR>
 " Toggle Numbers On | Off
 map <Leader>n :set number!<CR>
 " Executes the current file
