@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.mem setf coffee
+au BufNewFile,BufRead *.mem setf memory
