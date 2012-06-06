@@ -37,7 +37,7 @@ hi def link memoryKeyword Keyword
 syn match memoryBoolean /\<\%(true\|on\|yes\|false\|off\|no\)\>/
 hi def link memoryBoolean Boolean
 
-syn match memoryGlobal /\<\%(null\|undefined\)\>/
+syn match memoryGlobal /\<\%(none\|undefined\)\>/
 hi def link memoryGlobal Type
 
 " A special variable
