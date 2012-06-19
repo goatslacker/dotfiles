@@ -80,7 +80,9 @@ set novisualbell
 " Backspace config
 set backspace=eol,start,indent
 " Relative line number
-set rnu
+if version >= 730
+  set rnu
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts
