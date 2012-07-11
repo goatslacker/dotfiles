@@ -37,6 +37,9 @@ hi def link memoryKeyword Keyword
 syn match memoryBoolean /\<\%(true\|on\|yes\|false\|off\|no\)\>/
 hi def link memoryBoolean Boolean
 
+syn match memoryException /\<\%(try\|catch\|raise\)\>/
+hi def link memoryException Exception
+
 syn match memoryGlobal /\<\%(none\|undefined\)\>/
 hi def link memoryGlobal Type
 
@@ -58,14 +61,17 @@ hi def link memoryNumber Number
 syn match memoryFloat /\i\@<![-+]\?\d*\.\@<!\.\d\+\%([eE][+-]\?\d\+\)\?/
 hi def link memoryFloat Float
 
+syn match memoryOperator /++\|+:\|!!\|=>\|<+/
+hi def link memoryOperator Operator
+
 " A normal assignment, or a post-increment or post-decrement assignment
-syn match memoryAssign /[a-zA-Z_$][0-9a-zA-Z_\-$]*[ ]*=/
+syn match memoryAssign /[a-zA-Z_$][0-9a-zA-Z_\-$]*[ ]*=(?!>)/
 hi def link memoryAssign Identifier
 
 syn match memoryCompare /[a-zA-Z_$][0-9a-zA-Z_\-$]*[ ]*[=|!]=/
 hi def link memoryCompare Normal
 
-syn match memoryFunction /[-=]>/
+syn match memoryFunction /->/
 hi def link memoryFunction Function
 
 syn match memoryFunctionCall /[a-zA-Z_$][0-9a-zA-Z_\-$]*:/

@@ -9,7 +9,7 @@ call pathogen#infect()
 " syntax highlighting
 syntax on
 set t_Co=256
-set background=light
+set background=dark
 color mango
 " history
 set history=900
