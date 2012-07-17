@@ -40,6 +40,7 @@
   pl = pull origin master
   ps = push origin master
   po = push origin gh-pages
+  ri = rebase --interactive
   st = status
   stage = add
   switch = checkout
