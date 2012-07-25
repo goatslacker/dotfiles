@@ -67,6 +67,8 @@ set cursorline
 set noshowmode
 " in Visual Mode show how many lines I'm selecting
 "set showcmd
+" Color column at 80
+set colorcolumn=80
 " Set the cmdheight to zero (only works with Josh's compiled version of vim)
 if exists("v:goatslacker")
   set cmdheight=0
