@@ -41,3 +41,7 @@
 [submodule ".vim/bundle/zencoding-vim"]
   path = .vim/bundle/zencoding-vim
   url = git://github.com/mattn/zencoding-vim.git
+
+[submodule ".vim/bundle/numbers"]
+  path = .vim/bundle/numbers
+  url = git://github.com/myusuf3/numbers.vim.git
