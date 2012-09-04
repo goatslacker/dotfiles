@@ -37,3 +37,5 @@ bindkey '^R' history-incremental-search-backward
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
+
+. /usr/local/bin/z.sh
