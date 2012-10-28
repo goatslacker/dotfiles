@@ -45,7 +45,7 @@
   shap = !sh -c 'git stash apply stash@{$1}'
   shdf = !sh -c 'git stash show -u stash@{$1}'
   shls = stash list
-  st = status
+  st = status -s
   stage = add
   switch = checkout
   unstage = reset HEAD

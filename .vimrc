@@ -200,3 +200,7 @@ function! <SID>R() "{{{
 endfunction "}}}
 
 
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
