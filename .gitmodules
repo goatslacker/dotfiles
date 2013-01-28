@@ -45,3 +45,15 @@
 [submodule ".vim/bundle/numbers"]
   path = .vim/bundle/numbers
   url = git://github.com/myusuf3/numbers.vim.git
+
+[submodule ".vim/bundle/VimClojure"]
+  path = .vim/bundle/VimClojure
+  url = git://github.com/vim-scripts/VimClojure.git
+
+[submodule ".vim/bundle/akira.vim"]
+  path = .vim/bundle/akira.vim
+  url = git://github.com/goatslacker/akira.vim.git
+
+[submodule ".vim/bundle/dwm.vim"]
+  path = .vim/bundle/dwm.vim
+  url = git://github.com/spolu/dwm.vim.git
