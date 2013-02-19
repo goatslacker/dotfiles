@@ -2,7 +2,7 @@
   "asi": false,
   "bitwise": true,
   "boss": false,
-  "camelCase": true,
+  "camelcase": true,
   "curly": true,
   "debug": false,
   "esnext": true,

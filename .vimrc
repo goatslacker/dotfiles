@@ -30,6 +30,10 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+""" Move a single row down/up for wrapped lines
+:nmap j gj
+:nmap k gk
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Text
@@ -69,10 +73,6 @@ set noshowmode
 "set showcmd
 " Color column at 80
 set colorcolumn=80
-" Set the cmdheight to zero (only works with Josh's compiled version of vim)
-if exists("v:goatslacker")
-  set cmdheight=0
-endif
 " for vim-powerline
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
@@ -91,7 +91,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fast saving
-map <leader>w :w!<CR>
+map <Leader>w :w!<CR>
 " Run Makefile
 map <Leader>b :w !make<CR>
 " JSHint file
@@ -108,6 +108,8 @@ map <Leader>t :NERDTreeToggle<CR>
 map <Leader>e :e! ~/.vimrc<CR>
 " Ctrl-F for grep
 map <c-f> :call FindPattern()<CR>
+" Clear search highlight
+nmap <Leader>q :nohlsearch<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -201,6 +203,14 @@ endfunction "}}}
 
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
 
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
+
+let g:user_zen_expandabbr_key='<Leader>a'
