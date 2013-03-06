@@ -214,3 +214,12 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 
 let g:user_zen_expandabbr_key='<Leader>a'
+
+
+function! <SID>gitDiffGutter() "{{{
+  :ToggleGitGutter
+  :ToggleGitGutterLineHighlights
+endfunction "}}}
+
+let g:gitgutter_enabled = 0
+map <Leader>d :call <SID>gitDiffGutter()<CR>
