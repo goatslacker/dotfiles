@@ -17,6 +17,8 @@ set history=900
 set nobackup
 set nowb
 
+filetype plugin on
+filetype indent plugin on
 
 """
 " > Getting rid of my bad habits
@@ -223,3 +225,7 @@ endfunction "}}}
 
 let g:gitgutter_enabled = 0
 map <Leader>d :call <SID>gitDiffGutter()<CR>
+
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
