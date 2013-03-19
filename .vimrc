@@ -75,9 +75,7 @@ set noshowmode
 "set showcmd
 " Color column at 80
 set colorcolumn=80
-" for vim-powerline
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
 " No error sounds/visual
 set noerrorbells
 set novisualbell
@@ -220,3 +218,5 @@ let g:user_zen_expandabbr_key='<Leader>a'
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+set rtp+=~/powerline/powerline/bindings/vim

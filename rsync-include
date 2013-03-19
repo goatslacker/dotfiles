@@ -5,4 +5,5 @@
 + .jshintrc
 + .zshrc
 + .oh-my-zsh/
++ powerline/
 - /*

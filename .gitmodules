@@ -53,3 +53,6 @@
 [submodule ".vim/bundle/dwm.vim"]
   path = .vim/bundle/dwm.vim
   url = git://github.com/spolu/dwm.vim.git
+[submodule "powerline"]
+	path = powerline
+	url = git://github.com/Lokaltog/powerline.git
