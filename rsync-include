@@ -7,4 +7,5 @@
 + .oh-my-zsh/
 + powerline/
 + .config/fish/functions/
++ .tmux.conf
 - /*
