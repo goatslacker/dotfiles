@@ -91,25 +91,19 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fast saving
-map <Leader>w :w!<CR>
-" Run Makefile
-map <Leader>b :w !make<CR>
+nmap <Leader>w :w!<CR>
 " JSHint file
-map <Leader>l :call <SID>lint()<CR>
-" call fixmyjs on file
-map <Leader>k :execute ":w !fixmyjs " . expand("%")<CR>:edit<CR>
-" Toggle Numbers On | Off
-map <Leader>n :set number!<CR>
+nmap <Leader>l :call <SID>lint()<CR>
 " Executes the current file
-map <Leader>p :call <SID>R()<CR>
+nmap <Leader>p :call <SID>R()<CR>
 " NERDTree
-map <Leader>t :NERDTreeToggle<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
 " Editing .vimrc
-map <Leader>e :e! ~/.vimrc<CR>
-" Ctrl-F for grep
-map <c-f> :call FindPattern()<CR>
+nmap <Leader>e :e! ~/.vimrc<CR>
 " Clear search highlight
-nmap <Leader>q :nohlsearch<CR>
+nmap <Leader>c :nohlsearch<CR>
+" BufExplorer close
+nmap <Leader>bd :bd<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -192,12 +186,10 @@ endfunction "}}}
 " Function that runs scripts while still editing file
 " supports JavaScript & Python
 function! <SID>R() "{{{
-  let filename = expand("%")
-
   if &filetype == 'javascript'
-    execute ":w !node " . filename
+    execute "!node %"
   elseif &filetype == 'python'
-    execute ":w !python " . filename
+    execute "!python %"
   endif
 endfunction "}}}
 
@@ -220,3 +212,5 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 set rtp+=~/powerline/powerline/bindings/vim
+
+let g:slime_target = "tmux"
