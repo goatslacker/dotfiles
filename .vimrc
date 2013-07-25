@@ -9,7 +9,7 @@ call pathogen#infect()
 " syntax highlighting
 syntax on
 set t_Co=256
-set background=dark
+set background=light
 color mango
 " history
 set history=900
@@ -146,9 +146,7 @@ augroup END
 
 "}}}
 
-
 " Lets me know how much time I've spent editing a file
-" Keyboard shortcut -> \dt
 augroup TimeSpentEditing
 au!
 au BufWinEnter * if !exists('b:tstart')|let b:tstart=reltime()|en
@@ -162,9 +160,14 @@ function! TimeSpentEditing()
   return printf("%d:%02d:%02d", hours, minutes, seconds)
 endfunction
 
-com! TimeSpentEditing echo TimeSpentEditing()
-map <silent> <leader>dt :TimeSpentEditing<CR>
+function! s:logTimespent()
+  let curFile = expand("%:p")
+  let time = TimeSpentEditing()
+  let path = expand("$HOME/.vimtime")
+  execute ":silent !echo " . curFile . " : " . time . " >> " . path
+endfunction
 
+autocmd BufWritePost * call s:logTimespent()
 
 " Function to find in current directory
 function! FindPattern()

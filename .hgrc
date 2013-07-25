@@ -1,5 +1,5 @@
 [ui]
-username = Josh Perez <josh.perez@palm.com>
+username = Josh Perez
 verbose = True
 merge = internal:merge
 
