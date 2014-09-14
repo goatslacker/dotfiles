@@ -1,7 +1,19 @@
 set nocompatible
 
-""" Pathogen
-call pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'goatslacker/akira.vim'
+Plug 'goatslacker/mango.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'myusuf3/numbers.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'sickill/vim-pasta'
+Plug 'spolu/dwm.vim'
+
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > General
@@ -9,7 +21,7 @@ call pathogen#infect()
 " syntax highlighting
 syntax on
 set t_Co=256
-set background=light
+set background=dark
 color mango
 " history
 set history=900
@@ -146,29 +158,6 @@ augroup END
 
 "}}}
 
-" Lets me know how much time I've spent editing a file
-augroup TimeSpentEditing
-au!
-au BufWinEnter * if !exists('b:tstart')|let b:tstart=reltime()|en
-augroup END
-
-function! TimeSpentEditing()
-  let secs = str2nr(reltimestr(reltime(b:tstart)))
-  let hours = secs / 3600
-  let minutes = (secs - hours * 3600) / 60
-  let seconds = secs - hours * 3600 - minutes * 60
-  return printf("%d:%02d:%02d", hours, minutes, seconds)
-endfunction
-
-function! s:logTimespent()
-  let curFile = expand("%:p")
-  let time = TimeSpentEditing()
-  let path = expand("$HOME/.vimtime")
-  execute ":silent !echo " . curFile . " : " . time . " >> " . path
-endfunction
-
-autocmd BufWritePost * call s:logTimespent()
-
 " Function to find in current directory
 function! FindPattern()
   call inputsave()
@@ -205,15 +194,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-
-let g:user_zen_expandabbr_key='<Leader>a'
-
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
-
-set rtp+=~/powerline/powerline/bindings/vim
 
 let g:slime_target = "tmux"
