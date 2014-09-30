@@ -51,3 +51,5 @@
   stage = add
   switch = checkout
   unstage = reset HEAD
+[core]
+	editor = /usr/bin/vim

@@ -3,6 +3,6 @@
 + .gitconfig
 + .hgrc
 + .jshintrc
-+ .config/fish/functions/
++ .config/fish/
 + .tmux.conf
 - /*
