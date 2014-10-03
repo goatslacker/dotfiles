@@ -12,6 +12,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
