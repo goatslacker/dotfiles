@@ -9,7 +9,6 @@ Plug 'goatslacker/mango.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdtree'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
@@ -29,6 +28,8 @@ set history=900
 " Turns backup off
 set nobackup
 set nowb
+
+set shell=/bin/sh
 
 filetype plugin on
 filetype indent plugin on
@@ -109,14 +110,14 @@ nmap <Leader>w :w!<CR>
 nmap <Leader>l :call <SID>lint()<CR>
 " Executes the current file
 nmap <Leader>p :call <SID>R()<CR>
-" NERDTree
-nmap <Leader>t :NERDTreeToggle<CR>
-" Editing .vimrc
-nmap <Leader>e :e! ~/.vimrc<CR>
+" File Explorer
+nmap <Leader>t :Explore<CR>
 " Clear search highlight
 nmap <Leader>c :nohlsearch<CR>
 " BufExplorer close
 nmap <Leader>bd :bd<CR>
+" ctrlp
+nmap <Leader>e :CtrlP<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
