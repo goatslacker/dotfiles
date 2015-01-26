@@ -4,16 +4,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-airline'
 Plug 'digitaltoad/vim-jade'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'goatslacker/akira.vim'
 Plug 'goatslacker/mango.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'myusuf3/numbers.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
 Plug 'wavded/vim-stylus'
 
 call plug#end()
