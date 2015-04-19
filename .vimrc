@@ -12,6 +12,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'myusuf3/numbers.vim'
 Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
+Plug 'ryanss/vim-hackernews'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
@@ -186,7 +187,7 @@ endfunction "}}}
 " supports JavaScript & Python
 function! <SID>R() "{{{
   if &filetype == 'javascript'
-    execute "!node %"
+    execute "!babel-node %"
   elseif &filetype == 'python'
     execute "!python %"
   endif
