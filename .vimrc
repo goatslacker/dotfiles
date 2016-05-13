@@ -195,7 +195,7 @@ endfunction "}}}
 " supports JavaScript & Python
 function! <SID>R() "{{{
   if &filetype == 'javascript'
-    execute "!node %"
+    execute "!babel-node %"
   elseif &filetype == 'python'
     execute "!python %"
   endif
