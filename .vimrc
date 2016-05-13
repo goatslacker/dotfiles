@@ -12,11 +12,17 @@ Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'myusuf3/numbers.vim'
 Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
+Plug 'ryanss/vim-hackernews'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
 Plug 'vimwiki/vimwiki'
 Plug 'wavded/vim-stylus'
+Plug 'trotzig/import-js'
+Plug 'altercation/vim-colors-solarized'
+Plug 'samuelsimoes/vim-jsx-utils'
+Plug 'wincent/ferret'
 
 call plug#end()
 
@@ -104,6 +110,9 @@ set backspace=eol,start,indent
 if version >= 730
   set rnu
 endif
+
+"set mouse=a
+"set ttymouse=xterm2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts

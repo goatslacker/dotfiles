@@ -12,6 +12,9 @@ setlocal comments=fb:*,fb:-,fb:+,n:> commentstring=>\ %s
 setlocal formatoptions+=tcqln
 setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^[-*+]\\s\\+
 
+setlocal linebreak      " Soft-wrap lines at word boundaries
+setlocal spell          " Spellcheck
+
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= "|setl cms< com< fo< flp<"
 else

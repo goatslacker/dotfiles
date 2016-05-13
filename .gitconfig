@@ -34,10 +34,12 @@
   dfst = diff --stat
   fixup = !sh -c 'git commit --fixup=$1' -
   ign = ls-files -o -i --exclude-standard
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
+  lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   msg = commit --allow-empty -m
   new = checkout -b
   nuke = reset --hard HEAD
+  pr = !sh -c 'git push -u origin $(git branch 2> /dev/null | grep \\* | sed -e \"s/\\* //\")'
   pl = pull origin master
   ps = push origin master
   po = push origin gh-pages
@@ -53,3 +55,9 @@
   unstage = reset HEAD
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /Users/josh_perez/.gitignore_global
+	precomposeunicode = true
+[rerere]
+	enabled = 1
+[push]
+	default = current
