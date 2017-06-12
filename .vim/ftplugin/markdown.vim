@@ -21,4 +21,10 @@ else
   let b:undo_ftplugin = "setl cms< com< fo< flp<"
 endif
 
+function! PreviewMarkdown()
+  execute "!md2html % > /tmp/md.html && open /tmp/md.html"
+endfunction
+
+command! PreviewMarkdown :call PreviewMarkdown()
+
 " vim:set sw=2:

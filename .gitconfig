@@ -57,7 +57,12 @@
 	editor = /usr/bin/vim
 	excludesfile = /Users/josh_perez/.gitignore_global
 	precomposeunicode = true
+	sparseCheckout = true
 [rerere]
-	enabled = 1
+	enabled = true
 [push]
 	default = current
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f

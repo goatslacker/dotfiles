@@ -11,7 +11,7 @@ Plug 'goatslacker/mango.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'myusuf3/numbers.vim'
-Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
+Plug 'pangloss/vim-javascript'
 Plug 'ryanss/vim-hackernews'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
@@ -19,10 +19,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'vimwiki/vimwiki'
 Plug 'wavded/vim-stylus'
-Plug 'trotzig/import-js'
+Plug 'Galooshi/vim-import-js'
 Plug 'altercation/vim-colors-solarized'
 Plug 'samuelsimoes/vim-jsx-utils'
 Plug 'wincent/ferret'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -99,7 +100,7 @@ set noshowmode
 " in Visual Mode show how many lines I'm selecting
 "set showcmd
 " Color column at 80
-set colorcolumn=80
+set colorcolumn=100
 set laststatus=2
 " No error sounds/visual
 set noerrorbells
@@ -107,9 +108,8 @@ set novisualbell
 " Backspace config
 set backspace=eol,start,indent
 " Relative line number
-if version >= 730
-  set rnu
-endif
+set relativenumber
+set number
 
 "set mouse=a
 "set ttymouse=xterm2
@@ -216,3 +216,6 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 let g:slime_target = "tmux"
+
+"highlight Comment cterm=italic
+"highlight jsTemplateVar cterm=italic
