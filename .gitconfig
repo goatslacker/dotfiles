@@ -14,7 +14,7 @@
   local = yellow
   remote = cyan
 [color "diff"]
-  meta = black bold
+  meta = yellow bold
   frag = blue
   old = red
   new = green
@@ -32,14 +32,15 @@
   dc = diff --cached
   df = diff --color
   dfst = diff --stat
-  fixup = !sh -c 'git commit --fixup=$1' -
+  feature = !sh -c 'git checkout -b $(whoami)/$(date +%s | md5 | cut -c 1-7)'
+  fixup = !sh -c 'git commit --fixup=HEAD' -
+  fork = !sh -c 'git remote add fork git@github.com:$0.git'
   ign = ls-files -o -i --exclude-standard
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
   msg = commit --allow-empty -m
   new = checkout -b
   nuke = reset --hard HEAD
-  pr = !sh -c 'git push -u origin $(git branch 2> /dev/null | grep \\* | sed -e \"s/\\* //\")'
   pl = pull origin master
   ps = push origin master
   po = push origin gh-pages
