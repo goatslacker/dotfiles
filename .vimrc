@@ -2,28 +2,23 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
-Plug 'digitaltoad/vim-jade'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
-Plug 'goatslacker/akira.vim'
 Plug 'goatslacker/mango.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'myusuf3/numbers.vim'
+Plug 'j-tom/vim-old-hope'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'ryanss/vim-hackernews'
+Plug 'samuelsimoes/vim-jsx-utils'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'vimwiki/vimwiki'
-Plug 'wavded/vim-stylus'
-Plug 'Galooshi/vim-import-js'
-Plug 'altercation/vim-colors-solarized'
-Plug 'samuelsimoes/vim-jsx-utils'
 Plug 'wincent/ferret'
-Plug 'vimwiki/vimwiki'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'toyamarinyon/vim-swift'
 
 call plug#end()
 
@@ -100,19 +95,14 @@ set noshowmode
 " in Visual Mode show how many lines I'm selecting
 "set showcmd
 " Color column at 80
-set colorcolumn=100
+set colorcolumn=80
 set laststatus=2
 " No error sounds/visual
 set noerrorbells
 set novisualbell
 " Backspace config
 set backspace=eol,start,indent
-" Relative line number
-set relativenumber
-set number
-
-"set mouse=a
-"set ttymouse=xterm2
+set rnu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts
@@ -216,6 +206,3 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 let g:slime_target = "tmux"
-
-"highlight Comment cterm=italic
-"highlight jsTemplateVar cterm=italic
