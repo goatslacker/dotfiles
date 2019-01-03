@@ -2,13 +2,13 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion' " Moving within vim: \\w
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab' " <3
 Plug 'goatslacker/mango.vim' " Syntax colors
 Plug 'itchyny/lightline.vim' " Statusline
 Plug 'rhysd/committia.vim' " Nice commit editing experience
-Plug 'scrooloose/nerdcommenter' " Commenting utils /cc
+Plug 'scrooloose/nerdcommenter' " Commenting utils \cc
 Plug 'sickill/vim-pasta' " Fixes for paste+indent
 Plug 'spolu/dwm.vim' " Window management: C-N, C-J/K, C-Space
 Plug 'tpope/vim-fugitive' " Git utils
