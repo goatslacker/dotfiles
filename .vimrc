@@ -7,6 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab' " <3
 Plug 'goatslacker/mango.vim' " Syntax colors
 Plug 'itchyny/lightline.vim' " Statusline
+Plug 'jlanzarotta/bufexplorer' " \be to open buffers
 Plug 'rhysd/committia.vim' " Nice commit editing experience
 Plug 'scrooloose/nerdcommenter' " Commenting utils \cc
 Plug 'sickill/vim-pasta' " Fixes for paste+indent
