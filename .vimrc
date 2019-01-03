@@ -3,19 +3,22 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'Lokaltog/vim-easymotion'
-Plug 'bling/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'goatslacker/mango.vim'
-Plug 'j-tom/vim-old-hope'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'rhysd/committia.vim'
 Plug 'samuelsimoes/vim-jsx-utils'
+Plug 'scrooloose/nerdcommenter'
 Plug 'sickill/vim-pasta'
 Plug 'spolu/dwm.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'wincent/ferret'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'toyamarinyon/vim-swift'
@@ -28,6 +31,7 @@ call plug#end()
 " syntax highlighting
 syntax on
 set t_Co=256
+let base16colorspace=256
 set background=dark
 color mango
 " history
@@ -56,7 +60,6 @@ inoremap <right> <nop>
 """ Move a single row down/up for wrapped lines
 :nmap j gj
 :nmap k gk
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Text
@@ -102,26 +105,21 @@ set noerrorbells
 set novisualbell
 " Backspace config
 set backspace=eol,start,indent
+" Relative line number
 set rnu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " > Keyboard Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Fast saving
-nmap <Leader>w :w!<CR>
-" JSHint file
-nmap <Leader>l :call <SID>lint()<CR>
 " Executes the current file
 nmap <Leader>p :call <SID>R()<CR>
 " File Explorer
 nmap <Leader>t :Explore<CR>
 " Clear search highlight
 nmap <Leader>c :nohlsearch<CR>
-" BufExplorer close
-nmap <Leader>bd :bd<CR>
-" ctrlp
-nmap <Leader>e :CtrlP<CR>
+" fzf
+nmap <Leader>f :FZF<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -134,7 +132,6 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
 
 " Restore cursor position to where it was before
 augroup JumpCursorOnEdit
@@ -164,23 +161,6 @@ augroup END
 
 "}}}
 
-" Function to find in current directory
-function! FindPattern()
-  call inputsave()
-  let name = input('find: ')
-  call inputrestore()
-  execute "vimgrep /" . expand(name) . "/j **"
-  execute ":cw"
-endfunction
-
-
-" JSHINT syntax checker
-function! <SID>lint() "{{{
-  let filename = expand("%")
-  execute ":w !jshint " . filename . " --config ~/.jshintrc"
-endfunction "}}}
-
-
 " Function that runs scripts while still editing file
 " supports JavaScript & Python
 function! <SID>R() "{{{
@@ -191,18 +171,11 @@ function! <SID>R() "{{{
   endif
 endfunction "}}}
 
-
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_lazy_update = 100
-let g:ctrlp_user_command = 'find %s -type f | egrep -iv "(\.(eot|gif|gz|ico|jpg|jpeg|otf|png|psd|pyc|svg|ttf|woff|zip)$)|(/\.)|((^|\/)tmp\/)"'
-
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 let g:slime_target = "tmux"
+
+" https://github.com/zeit/hyper/issues/1037#issuecomment-269848444
+set t_RV=
