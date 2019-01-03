@@ -4,23 +4,26 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Lokaltog/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
-Plug 'goatslacker/mango.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'rhysd/committia.vim'
-Plug 'samuelsimoes/vim-jsx-utils'
-Plug 'scrooloose/nerdcommenter'
-Plug 'sickill/vim-pasta'
-Plug 'spolu/dwm.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'wincent/ferret'
+Plug 'ervandew/supertab' " <3
+Plug 'goatslacker/mango.vim' " Syntax colors
+Plug 'itchyny/lightline.vim' " Statusline
+Plug 'rhysd/committia.vim' " Nice commit editing experience
+Plug 'scrooloose/nerdcommenter' " Commenting utils /cc
+Plug 'sickill/vim-pasta' " Fixes for paste+indent
+Plug 'spolu/dwm.vim' " Window management: C-N, C-J/K, C-Space
+Plug 'tpope/vim-fugitive' " Git utils
+Plug 'wincent/ferret' " Find & Replace :Acks /{pattern}/{replacement}/
 
+" For fuzzy finding files
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Languages
+Plug 'elzr/vim-json'
+Plug 'gabrielelana/vim-markdown'
 Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'toyamarinyon/vim-swift'
 
 call plug#end()
