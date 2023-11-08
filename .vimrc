@@ -2,7 +2,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Lokaltog/vim-easymotion' " Moving within vim: \\w
+Plug 'Lokaltog/vim-easymotion' " Moving within vim \\w
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab' " <3
 Plug 'goatslacker/mango.vim' " Syntax colors
@@ -11,13 +11,12 @@ Plug 'jlanzarotta/bufexplorer' " \be to open buffers
 Plug 'rhysd/committia.vim' " Nice commit editing experience
 Plug 'sickill/vim-pasta' " Fixes for paste+indent
 Plug 'spolu/dwm.vim' " Window management: C-N, C-J/K, C-Space
-Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim' " gcc / visual: gc
 Plug 'tpope/vim-fugitive' " Git utils
 Plug 'wincent/ferret' " Find & Replace :Acks /{pattern}/{replacement}/
-
-" For fuzzy finding files
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale' " ALE for linting/prettier integration
+Plug 'jremmen/vim-ripgrep' " :Rg <pattern>
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Languages
 Plug 'elzr/vim-json'
@@ -26,6 +25,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'toyamarinyon/vim-swift'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
@@ -183,3 +183,53 @@ let g:slime_target = "tmux"
 
 " https://github.com/zeit/hyper/issues/1037#issuecomment-269848444
 set t_RV=
+
+" ALE
+
+let g:ale_completion_enabled = 0
+let g:ale_fix_on_save = 0
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '✖'
+
+let g:ale_completion_tsserver_autoimport = 1
+
+let g:ale_linters = {
+      \'html': [],
+      \'javascript': ['eslint'],
+      \'typescript': ['eslint', 'tsserver', 'typecheck'],
+      \'typescriptreact': ['eslint', 'tsserver', 'typecheck'],
+      \}
+
+let g:ale_fixers = {
+      \'css': ['prettier'],
+      \'html': ['prettier'],
+      \'javascript': ['prettier'],
+      \'json': ['prettier'],
+      \'markdown': ['prettier'],
+      \'typescript': ['prettier'],
+      \'typescriptreact': ['prettier'],
+      \}
+
+let g:ale_pattern_options = {
+      \'\.min.js$': { 'ale_enabled': 0 },
+      \'\.min.css$': { 'ale_enabled': 0 },
+      \}
+
+nnoremap <Leader>af :ALEFix<CR>
+nnoremap <Leader>at :ALEToggle<CR>
+nnoremap <Leader>ad :ALEGoToDefinition<CR>
+nnoremap <Leader>am :messages<CR>
+nnoremap <silent> <Left> :ALEPrevious<CR>
+nnoremap <silent> <Right> :ALENext<CR>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+endif
+let g:ctrlp_use_caching=0
