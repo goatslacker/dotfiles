@@ -2,7 +2,8 @@
 + .vimrc
 + .gitconfig
 + .hgrc
-+ .config/fish/
++ .config/alacritty
++ .config/fish
 + .tmux.conf
 - .vim/plugged
 - /*
