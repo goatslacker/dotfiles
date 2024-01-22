@@ -3,29 +3,36 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'Lokaltog/vim-easymotion' " Moving within vim \\w
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale' " ALE for linting/prettier integration
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab' " <3
 Plug 'goatslacker/mango.vim' " Syntax colors
 Plug 'itchyny/lightline.vim' " Statusline
 Plug 'jlanzarotta/bufexplorer' " \be to open buffers
+Plug 'jremmen/vim-ripgrep' " :Rg <pattern>
 Plug 'rhysd/committia.vim' " Nice commit editing experience
 Plug 'sickill/vim-pasta' " Fixes for paste+indent
 Plug 'spolu/dwm.vim' " Window management: C-N, C-J/K, C-Space
 Plug 'tomtom/tcomment_vim' " gcc / visual: gc
 Plug 'tpope/vim-fugitive' " Git utils
 Plug 'wincent/ferret' " Find & Replace :Acks /{pattern}/{replacement}/
-Plug 'dense-analysis/ale' " ALE for linting/prettier integration
-Plug 'jremmen/vim-ripgrep' " :Rg <pattern>
-Plug 'ctrlpvim/ctrlp.vim'
 
 " Languages
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
-Plug 'gabrielelana/vim-markdown'
+Plug 'ericpruitt/tmux.vim'
+Plug 'vim-python/python-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'toyamarinyon/vim-swift'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim'
+Plug 'toyamarinyon/vim-swift'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -131,9 +138,6 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 " Use tabs for Makefile
 autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
 
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
@@ -200,6 +204,7 @@ let g:ale_completion_tsserver_autoimport = 1
 let g:ale_linters = {
       \'html': [],
       \'javascript': ['eslint'],
+      \'python': ['ruff', 'pyright'],
       \'typescript': ['eslint', 'tsserver', 'typecheck'],
       \'typescriptreact': ['eslint', 'tsserver', 'typecheck'],
       \}
@@ -210,6 +215,7 @@ let g:ale_fixers = {
       \'javascript': ['prettier'],
       \'json': ['prettier'],
       \'markdown': ['prettier'],
+      \'python': ['ruff', 'ruff_format'],
       \'typescript': ['prettier'],
       \'typescriptreact': ['prettier'],
       \}
@@ -227,9 +233,13 @@ nnoremap <silent> <Left> :ALEPrevious<CR>
 nnoremap <silent> <Right> :ALENext<CR>
 
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlP .'
 let g:ctrlp_working_path_mode = 'ra'
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 endif
 let g:ctrlp_use_caching=0
+
+let g:python_highlight_all = 1
+
+let g:vim_markdown_folding_disabled = 1

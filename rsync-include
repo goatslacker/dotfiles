@@ -4,6 +4,7 @@
 + .hgrc
 + .config/alacritty
 + .config/fish
++ .config/fish/functions
 + .tmux.conf
 - .vim/plugged
 - /*

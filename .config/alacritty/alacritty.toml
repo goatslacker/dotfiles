@@ -1,0 +1,53 @@
+[colors.bright]
+black = "0x676767"
+blue = "0x50b3d8"
+cyan = "0x50b3d8"
+green = "0x77bc64"
+magenta = "0xef7c2a"
+red = "0xea3d54"
+white = "0xfefefe"
+yellow = "0xe6ce57"
+
+[colors.cursor]
+cursor = "0xd9d9d9"
+text = "0x2c2c2c"
+
+[colors.dim]
+black = "0x232323"
+blue = "0x556b79"
+cyan = "0x5c8482"
+green = "0x5e6547"
+magenta = "0x6e4962"
+red = "0x74423f"
+white = "0x828282"
+yellow = "0x8b7653"
+
+[colors.normal]
+black = "0x4b4b4b"
+blue = "0x50b3d8"
+cyan = "0x50b3d8"
+green = "0x77bc64"
+magenta = "0xef7c2a"
+red = "0xff4f6b"
+white = "0xcbcdd1"
+yellow = "0xe6ce57"
+
+[colors.primary]
+background = "0x2c2c2c"
+bright_foreground = "0xd9d9d9"
+dim_foreground = "0xdbdbdb"
+foreground = "0xd6d6d6"
+
+[font]
+size = 14
+
+[font.bold]
+family = "Fira Code"
+style = "Bold"
+
+[font.italic]
+family = "Fira Code"
+
+[font.normal]
+family = "Fira Code"
+style = "Retina"
