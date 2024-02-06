@@ -202,6 +202,7 @@ let g:ale_sign_warning = '✖'
 let g:ale_completion_tsserver_autoimport = 1
 
 let g:ale_linters = {
+      \'elixir': ['dialyxir', 'mix'],
       \'html': [],
       \'javascript': ['eslint'],
       \'python': ['ruff', 'pyright'],
@@ -211,6 +212,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
       \'css': ['prettier'],
+      \'elixir': ['mix_format'],
       \'html': ['prettier'],
       \'javascript': ['prettier'],
       \'json': ['prettier'],
@@ -221,6 +223,7 @@ let g:ale_fixers = {
       \}
 
 let g:ale_pattern_options = {
+      \'.*\.py$': {'ale_enabled': 0},
       \'\.min.js$': { 'ale_enabled': 0 },
       \'\.min.css$': { 'ale_enabled': 0 },
       \}
