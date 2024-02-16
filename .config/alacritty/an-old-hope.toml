@@ -63,11 +63,11 @@ cyan = "#4fb4d8"
 white = "#cbcdd2"
 
 [colors.bright]
-black = "#1c1d21"
+black = "#45474f"
 red = "#eb3d54"
 green = "#78bd65"
 yellow = "#e5cd52"
 blue = "#4fb4d8"
 magenta = "#ef7c2a"
 cyan = "#4fb4d8"
-white = "#cbcdd2"
+white = "#dadcdf"
