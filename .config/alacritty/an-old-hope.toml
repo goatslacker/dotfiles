@@ -1,0 +1,73 @@
+# very_light_grey = '#cbcdd2'
+# light_grey = '#848794'
+# grey = '#686b78'
+# dark_grey = '#45474f'
+# very_dark_grey = '#1c1d21'
+# vader = '#eb3d54'
+# luke = '#ef7c2a'
+# threepio = '#e5cd52'
+# yoda = '#78bd65'
+# artoo = '#4fb4d8'
+
+[colors.primary]
+background = "#1c1d21"
+foreground = "#848794"
+bright_foreground = "#cbcdd2"
+
+[colors.cursor]
+text = "#45474f"
+cursor = "#4fb4d8"
+
+[colors.vi_mode_cursor]
+text = "#45474f"
+cursor = "#e5cd52"
+
+[colors.search.matches]
+foreground = "#45474f"
+background = "#e5cd52"
+
+[colors.search.focused_match]
+foreground = "#848794"
+background = "#eb3d54"
+
+# Unused.
+# [colors.search.bar]
+# background = "#848794"
+# foreground = "#45474f"
+
+[colors.hints.start]
+foreground = "#45474f"
+background = "#e5cd52"
+
+[colors.hints.end]
+foreground = "#e5cd52"
+background = "#45474f"
+
+# Left out because None
+# [colors.line_indicator]
+# foreground = None
+# background = None
+
+[colors.selection]
+text = "#848794"
+background = "#45474f"
+
+[colors.normal]
+black = "#1c1d21"
+red = "#eb3d54"
+green = "#78bd65"
+yellow = "#e5cd52"
+blue = "#4fb4d8"
+magenta = "#ef7c2a"
+cyan = "#4fb4d8"
+white = "#cbcdd2"
+
+[colors.bright]
+black = "#1c1d21"
+red = "#eb3d54"
+green = "#78bd65"
+yellow = "#e5cd52"
+blue = "#4fb4d8"
+magenta = "#ef7c2a"
+cyan = "#4fb4d8"
+white = "#cbcdd2"
