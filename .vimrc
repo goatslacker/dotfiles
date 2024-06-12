@@ -19,7 +19,6 @@ Plug 'tpope/vim-fugitive' " Git utils
 Plug 'wincent/ferret' " Find & Replace :Acks /{pattern}/{replacement}/
 
 " Languages
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
