@@ -21,6 +21,7 @@ Plug 'wincent/ferret' " Find & Replace :Acks /{pattern}/{replacement}/
 " Languages
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'elixir-lang/vim-elixir'
+Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'elzr/vim-json'
 Plug 'ericpruitt/tmux.vim'
 Plug 'vim-python/python-syntax'

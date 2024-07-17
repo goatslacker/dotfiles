@@ -2,10 +2,9 @@
 + .vimrc
 + .gitconfig
 + .hgrc
-+ .config/alacritty
-+ .config/fish
-+ .config/fish/functions
 + .tmux.conf
 + .tmux.conf.local
++ .config/
 - .vim/plugged
+- .config/fish/completions
 - /*
