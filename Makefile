@@ -7,7 +7,7 @@ all:
 	@echo "\n"
 
 install:
-	@rsync --verbose --recursive --exclude-from=rsync-include . ~/.
+	@rsync --verbose --recursive --filter=". rsync-include" . ~/.
 
 update:
-	@rsync --verbose --recursive --exclude-from=rsync-include ~/. .
+	@rsync --verbose --recursive --filter=". rsync-include" ~/. .

@@ -1,0 +1,20 @@
+return {
+	ensure_installed = {
+		"css",
+		"elixir",
+		"html",
+		"javascript",
+		"kotlin",
+		"lua",
+		"python",
+		"rust",
+		"swift",
+		"typescript",
+		"vim",
+		"vimdoc",
+	},
+	sync_install = false,
+	auto_install = true,
+	highlight = { enable = true },
+	indent = { enable = true },
+}

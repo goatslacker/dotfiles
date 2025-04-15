@@ -1,0 +1,27 @@
+return {
+  {
+    "<leader>gb",
+    "<cmd>Git branch<cr>",
+    desc = "git branch",
+  },
+  {
+    "<leader>gd",
+    "<cmd>Git diff --color<cr>",
+    desc = "git diff",
+  },
+  {
+    "<leader>gl",
+    "<cmd>Git log --abbrev-commit --date=relative<cr>",
+    desc = "git log",
+  },
+  {
+    "<leader>gs",
+    "<cmd>Git status -s<cr>",
+    desc = "git status",
+  },
+  {
+    "<leader>gx",
+    "<cmd>Git blame<cr>",
+    desc = "git blame",
+  },
+}

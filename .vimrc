@@ -123,14 +123,10 @@ set rnu
 " > Keyboard Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Executes the current file
-nmap <Leader>p :call <SID>R()<CR>
 " File Explorer
 nmap <Leader>t :Explore<CR>
 " Clear search highlight
 nmap <Leader>c :nohlsearch<CR>
-" fzf
-nmap <Leader>f :FZF<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -169,24 +165,11 @@ augroup END
 
 "}}}
 
-" Function that runs scripts while still editing file
-" supports JavaScript & Python
-function! <SID>R() "{{{
-  if &filetype == 'javascript'
-    execute "!node %"
-  elseif &filetype == 'python'
-    execute "!python %"
-  endif
-endfunction "}}}
-
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 let g:slime_target = "tmux"
-
-" https://github.com/zeit/hyper/issues/1037#issuecomment-269848444
-set t_RV=
 
 " ALE
 
@@ -246,3 +229,8 @@ let g:ctrlp_use_caching=0
 let g:python_highlight_all = 1
 
 let g:vim_markdown_folding_disabled = 1
+
+function! SynStack()
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun

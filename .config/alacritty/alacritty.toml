@@ -1,15 +1,15 @@
-import = ["~/.config/alacritty/an-old-hope.toml"]
+import = ["~/.config/alacritty/kanagawa-wave.toml"]
 
 [font]
-size = 14
+size = 13.5
 
 [font.bold]
-family = "Fira Code"
+family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Fira Code"
+family = "FiraCode Nerd Font"
 
 [font.normal]
-family = "Fira Code"
+family = "FiraCode Nerd Font"
 style = "Retina"
