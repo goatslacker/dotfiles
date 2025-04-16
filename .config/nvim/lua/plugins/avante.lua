@@ -6,7 +6,7 @@ return {
 		provider = "claude",
 		claude = {
 			endpoint = "https://api.anthropic.com",
-      model = "claude-3-7-sonnet-20250219",
+			model = "claude-3-7-sonnet-20250219",
 			temperature = 0.7,
 			max_tokens = 4096,
 		},
@@ -22,7 +22,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		-- "echasnovski/mini.pick", -- for file_selector provider mini.pick
 		-- "ibhagwan/fzf-lua", -- for file_selector provider fzf
-    -- TODO: markview renders nicer, does that have avante support?
+		-- TODO: markview renders nicer, does that have avante support?
 		-- {
 		-- 	-- Make sure to set this up properly if you have lazy=true
 		-- 	"MeanderingProgrammer/render-markdown.nvim",
@@ -32,9 +32,5 @@ return {
 		-- 	ft = { "markdown", "Avante" },
 		-- },
 	},
-  keys = {
-    { "<leader>aa", "<cmd>AvanteAsk<cr>", "Ask Avante" },
-    { "<leader>ac", "<cmd>AvanteChat<cr>", "Open a Chat Window" },
-    { "<leader>ah", "<cmd>AvanteHistory<cr>", "Show Chat History" },
-  }
+	keys = require("mappings.avante"),
 }

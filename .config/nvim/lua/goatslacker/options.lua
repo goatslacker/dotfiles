@@ -6,6 +6,9 @@ vim.cmd([[
   autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 ]])
 
+vim.opt.mouse = a
+vim.opt.termguicolors = true
+
 wo.relativenumber = true
 
 -- Spaces > Tabs

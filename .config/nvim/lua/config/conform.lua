@@ -1,15 +1,4 @@
 return {
-	-- formatters_by_ft = {
-	--   python = { "black", "isort" },
-	--   typescript = { "prettier" },
-	--   javascript = { "prettier" },
-	--   typescriptreact = { "prettier" },
-	--   javascriptreact = { "prettier" },
-	--   css = { "prettier" },
-	--   elixir = { "mix" },
-	--   rust = { "rustfmt" },
-	-- },
-	-- Map of filetype to formatters
 	formatters_by_ft = {
 		css = { "prettier" },
 		go = { "gofmt" },
@@ -25,6 +14,10 @@ return {
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		["*"] = { "trim_whitespace" },
+	},
+	format_on_save = {
+		timeout_ms = 500,
+		lsp_format = "fallback",
 	},
 	-- Set the log level. Use `:ConformInfo` to see the location of the log file.
 	log_level = vim.log.levels.ERROR,
