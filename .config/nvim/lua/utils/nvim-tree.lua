@@ -7,9 +7,6 @@ M.OpenNvimTree = function()
 		api.tree.open({
 			path = vim.fn.expand("%:p:h"),
 		})
-
-		-- Switches focus back to the main file
-		vim.cmd("bnext")
 	end
 end
 

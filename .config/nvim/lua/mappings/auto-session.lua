@@ -1,8 +1,8 @@
 return {
 	{
-		"<leader>ss",
+		"<leader>sl",
 		"<cmd>SessionSearch<cr>",
-		desc = "Session Search",
+		desc = "Session List",
 	},
 	{
 		"<leader>sd",
