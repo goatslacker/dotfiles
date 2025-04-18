@@ -1,4 +1,3 @@
-import = ["~/.config/alacritty/kanagawa-wave.toml"]
 
 [font]
 size = 13.5
@@ -20,3 +19,6 @@ save_to_clipboard = true
 [[mouse.bindings]]
 mouse = "Right"
 action = "Paste"
+
+[general]
+import = ["~/.config/alacritty/kanagawa-wave.toml"]
