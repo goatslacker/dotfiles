@@ -1,16 +1,16 @@
 return {
-  "neovim/nvim-lspconfig",
-  lazy = false,
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  },
-  config = function()
-    require("mason").setup()
+	"neovim/nvim-lspconfig",
+	lazy = false,
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	},
+	config = function()
+		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				-- Python
-				"pyright",
+				"basedpyright",
 				-- TypeScript/JavaScript
 				"ts_ls",
 				-- CSS
@@ -26,7 +26,7 @@ return {
 		local lspconfig = require("lspconfig")
 
 		-- Python
-		lspconfig.pyright.setup({
+		lspconfig.basedpyright.setup({
 			capabilities = capabilities,
 		})
 
@@ -60,6 +60,6 @@ return {
 				},
 			},
 		})
-  end,
-  keys = require("mappings.lsp-config")
+	end,
+	keys = require("mappings.lsp-config"),
 }

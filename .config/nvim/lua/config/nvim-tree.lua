@@ -1,5 +1,4 @@
 return {
-	auto_close = true,
 	filters = { dotfiles = false },
 	disable_netrw = true,
 	sync_root_with_cwd = true,

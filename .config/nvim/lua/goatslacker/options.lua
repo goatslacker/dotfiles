@@ -6,8 +6,16 @@ vim.cmd([[
   autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 ]])
 
+-- Filetypes
+vim.filetype.add({
+	extension = {
+		mdx = "markdown",
+	},
+})
+
 vim.opt.mouse = a
 vim.opt.termguicolors = true
+vim.opt.mousemoveevent = true
 
 wo.relativenumber = true
 

@@ -13,3 +13,10 @@ family = "FiraCode Nerd Font"
 [font.normal]
 family = "FiraCode Nerd Font"
 style = "Retina"
+
+[selection]
+save_to_clipboard = true
+
+[[mouse.bindings]]
+mouse = "Right"
+action = "Paste"

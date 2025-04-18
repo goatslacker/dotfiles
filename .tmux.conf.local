@@ -1,30 +1,23 @@
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'Nybkox/tmux-kanagawa'
+
+# vi-mode
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi v send -X begin-selection
 bind-key -T copy-mode-vi V send -X select-line
 bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 set-option -g default-shell /opt/homebrew/bin/fish
 
-# an-old-hope
-# https://github.com/theherk/an-old-hope-tmux
-set -g display-panes-active-colour "#45474f"
-set -g display-panes-colour "#cbcdd2"
-set -g message-command-style fg="#cbcdd2",bg="#1c1d21"
-set -g message-style fg="#cbcdd2",bg="#45474f"
-set -g status-position bottom
-set -g status-left-length 100
-set -g status-left " #S "
-set -g status-left-style fg="#45474f",bg="#78bd65","bright"
-set -g status-right-length 100
-set -g status-right "#[fg=#4fb4d8,bg=#45474f]↑ #(uptime | cut -f 4-5 -d ' ' | cut -f 1 -d ',') #[fg=#ef7c2a,bg=#45474f]| #[fg=#efcd52,bg=#45474f]#(date +'%a %Y-%m-%d %H:%M %z %Z') #[fg=#ef7c2a,bg=#45474f]| #[fg=#45474f,bg=#4fb4d8] #h "
-set -g status-right-style fg="#45474f",bg="#4fb4d8"
-set -g status-style fg="#848794",bg="#45474f"
-setw -g clock-mode-colour "#4fb4d8"
-setw -g mode-style fg="#e5cd52",bg="#45474f"
-setw -g pane-active-border-style fg="#ef7c2a"
-setw -g pane-border-format "#{?pane_active,#[reverse],}#{pane_index}#[default] \"#{pane_title}\""
-setw -g pane-border-style fg="#45474f"
-setw -g window-status-activity-style fg="#cbcdd2",bg="#45474f"
-setw -g window-status-current-format "#[fg=#4fb4d8,bg=#45474f,bold] #I #[fg=#ef7c2a,bg=#45474f,bold]| #[fg=#4fb4d8,bg=#45474f,bold]#W "
-setw -g window-status-format "#[fg=#cbcdd2,bg=#45474f] #I #[fg=#ef7c2a,bg=#45474f]| #[fg=#cbcdd2,bg=#45474f]#W "
-setw -g window-status-separator ""
-setw -g window-status-style fg="#eb3d54",bg="#45474f"
+# Mouse
+set -g mouse on
+set -g focus-events on
+
+# Kanagawa config
+# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, playerctl, kubernetes-context, synchronize-panes
+set -g @kanagawa-plugins "git battery weather time"
+set -g @kanagawa-show-powerline true
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

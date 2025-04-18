@@ -1,7 +1,7 @@
 return {
-  {
-    "<localleader>be",
-    "<cmd>BufExplorer<cr>",
-    desc = "Open BufExplorer"
-  }
+	{
+		"<leader>be",
+		"<cmd>BufExplorer<cr>",
+		desc = "Open BufExplorer",
+	},
 }

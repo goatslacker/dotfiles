@@ -8,5 +8,8 @@ return {
 		{ "<leader>g", group = "Git" },
 		{ "<leader>h", group = "Hop" },
 		{ "<leader>l", group = "LSP Tools" },
+		{ "<leader>o", group = "Overseer" },
+		{ "<leader>s", group = "Sessions" },
+		{ "<leader>t", group = "NvimTree" },
 	},
 }
