@@ -3,21 +3,26 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'Nybkox/tmux-kanagawa'
 
+# Fish
+set-option -g default-shell /opt/homebrew/bin/fish
+
 # vi-mode
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi v send -X begin-selection
 bind-key -T copy-mode-vi V send -X select-line
-bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-set-option -g default-shell /opt/homebrew/bin/fish
+bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'pbcopy'
+
+# Kanagawa config
+set -g @kanagawa-no-battery-label " "
+set -g @kanagawa-plugins "cwd git battery weather time"
+set -g @kanagawa-set-miltary-time true
+set -g @kanagawa-show-fahrenheit true
+set -g @kanagawa-show-location false
+set -g @kanagawa-show-powerline true
 
 # Mouse
 set -g mouse on
 set -g focus-events on
-
-# Kanagawa config
-# available plugins: battery, cpu-usage, git, gpu-usage, ram-usage, tmux-ram-usage, network, network-bandwidth, network-ping, ssh-session, attached-clients, network-vpn, weather, time, mpc, spotify-tui, playerctl, kubernetes-context, synchronize-panes
-set -g @kanagawa-plugins "git battery weather time"
-set -g @kanagawa-show-powerline true
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'

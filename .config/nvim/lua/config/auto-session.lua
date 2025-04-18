@@ -1,3 +1,3 @@
 return {
-  auto_save = false,
+	auto_save = true,
 }
