@@ -4,4 +4,11 @@ return {
 	dependencies = {
 		"saghen/blink.cmp",
 	},
+	keys = {
+		{
+			"<localleader>m",
+			"<cmd>Markview<cr>",
+			desc = "Toggle Markview",
+		},
+	},
 }
