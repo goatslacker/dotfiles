@@ -1,1 +1,1 @@
-return { "ervandew/supertab" }
+return { "ervandew/supertab", enabled = false }

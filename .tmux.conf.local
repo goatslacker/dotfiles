@@ -21,8 +21,8 @@ set -g @kanagawa-show-location false
 set -g @kanagawa-show-powerline true
 
 # Mouse
-set -g mouse on
-set -g focus-events on
+# set -g mouse on
+# set -g focus-events on
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
