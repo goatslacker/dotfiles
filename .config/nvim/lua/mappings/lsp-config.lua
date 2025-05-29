@@ -28,20 +28,6 @@ return {
 		desc = "Show all diagnostics in buffer",
 	},
 	{
-		"<leader>ld",
-		function()
-			vim.lsp.buf.definition()
-		end,
-		desc = "Go to definition",
-	},
-	{
-		"<leader>lt",
-		function()
-			vim.lsp.buf.type_definition()
-		end,
-		desc = "Go to type definition",
-	},
-	{
 		"<leader>lh",
 		function()
 			vim.lsp.buf.hover()
@@ -51,16 +37,26 @@ return {
 	{
 		"<leader>lr",
 		function()
-			vim.lsp.buf.references()
+			local win = vim.api.nvim_get_current_win()
+			local params = vim.lsp.util.make_position_params()
+			params.context = { includeDeclaration = true }
+
+			vim.lsp.buf_request(0, "textDocument/references", params, function(_, result)
+				if not result or vim.tbl_isempty(result) then
+					vim.notify("No references found")
+					return
+				end
+				require("utils.lsp-config").show_locations_in_telescope(result)
+			end)
 		end,
-		desc = "Show references",
+		desc = "Show references (Telescope)",
 	},
 	{
 		"<leader>li",
 		function()
 			vim.lsp.buf.implementation()
 		end,
-		desc = "Show usage",
+		desc = "Show implementation",
 	},
 	{
 		"<leader>la",
@@ -79,14 +75,14 @@ return {
 	{
 		"<leader>l1",
 		function()
-			require("utils.lsp-config").show_unique_locations_with_fallback("textDocument/definition")
+			require("utils.lsp-config").handle_lsp_locations("textDocument/definition")
 		end,
 		desc = "Go to definition+",
 	},
 	{
 		"<leader>l2",
 		function()
-			require("utils.lsp-config").show_unique_locations_with_fallback("textDocument/typeDefinition")
+			require("utils.lsp-config").handle_lsp_locations("textDocument/typeDefinition")
 		end,
 		desc = "Go to type definition+",
 	},

@@ -13,7 +13,16 @@ return {
 	-- See :h blink-cmp-config-keymap for defining your own keymap
 	keymap = {
 		preset = "default",
-		["<Tab>"] = { "insert_next", "fallback" },
+		["<Tab>"] = {
+			function(cmp)
+				if cmp.snippet_active() then
+					return cmp.insert_next()
+				else
+					return cmp.select_next()
+				end
+			end,
+			"fallback",
+		},
 		["<S-Tab>"] = { "insert_prev", "fallback" },
 	},
 
@@ -25,8 +34,8 @@ return {
 
 	-- (Default) Only show the documentation popup when manually triggered
 	completion = {
-		documentation = { auto_show = false },
-		list = { selection = { preselect = false, auto_insert = true } },
+		documentation = { auto_show = true },
+		list = { selection = { preselect = false, auto_insert = true }, max_items = 50 },
 	},
 
 	-- Default list of enabled providers defined so that you can extend it
