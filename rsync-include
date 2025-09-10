@@ -3,6 +3,7 @@
 + /.config/fish/
 + /.config/fish/functions/***
 + /.config/nvim/***
++ /.config/kitty/***
 + /.vim/
 - /.vim/plugged/
 + /.vim/***
