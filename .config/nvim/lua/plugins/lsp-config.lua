@@ -23,43 +23,28 @@ return {
 			automatic_installation = true,
 		})
 
-		local lspconfig = require("lspconfig")
+    vim.lsp.enable('basedpyright')
 
-		-- Python
-		lspconfig.basedpyright.setup({
-			capabilities = capabilities,
-		})
+    vim.lsp.enable('ts_ls')
 
-		-- TypeScript/JavaScript
-		lspconfig.ts_ls.setup({
-			capabilities = capabilities,
-		})
+    vim.lsp.enable('cssls')
 
-		-- CSS
-		lspconfig.cssls.setup({
-			capabilities = capabilities,
-		})
-
-		-- Elixir
-		lspconfig.elixirls.setup({
-			capabilities = capabilities,
+    vim.lsp.config('elixirls', {
 			cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/elixir-ls") },
-		})
+    })
 
-		-- Rust
-		lspconfig.rust_analyzer.setup({
-			capabilities = capabilities,
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-					checkOnSave = {
-						command = "clippy",
-					},
-				},
-			},
-		})
+    vim.lsp.config('rust_analyzer', {
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            allFeatures = true,
+          },
+          checkOnSave = {
+            command = "clippy",
+          },
+        },
+      },
+    })
 	end,
 	keys = require("mappings.lsp-config"),
 }

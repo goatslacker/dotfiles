@@ -1,17 +1,17 @@
 return {
 	{
 		"<leader>sl",
-		"<cmd>SessionSearch<cr>",
+		"<cmd>AutoSession search<cr>",
 		desc = "Session List",
 	},
 	{
 		"<leader>sd",
-		"<cmd>SessionDelete<cr>",
+		"<cmd>AutoSession delete<cr>",
 		desc = "Session Delete",
 	},
 	{
 		"<leader>sv",
-		"<cmd>SessionSave<cr>",
+		"<cmd>AutoSession save<cr>",
 		desc = "Session Save",
 	},
 }
