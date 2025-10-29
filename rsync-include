@@ -4,6 +4,7 @@
 + /.config/fish/functions/***
 + /.config/nvim/***
 + /.config/kitty/***
++ /.config/ghostty/***
 + /.vim/
 - /.vim/plugged/
 + /.vim/***

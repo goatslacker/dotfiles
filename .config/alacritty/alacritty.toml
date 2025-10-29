@@ -1,24 +1,28 @@
+[general]
+import = ["~/.config/alacritty/kanagawa-wave.toml"]
+live_config_reload = true
 
 [font]
 size = 13.5
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "Fira Code"
 style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "Fira Code"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Fira Code"
 style = "Retina"
-
-[selection]
-save_to_clipboard = true
 
 [[mouse.bindings]]
 mouse = "Right"
 action = "Paste"
 
-[general]
-import = ["~/.config/alacritty/kanagawa-wave.toml"]
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "Full"
+startup_mode = "Maximized"
