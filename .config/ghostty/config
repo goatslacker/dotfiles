@@ -53,3 +53,4 @@ theme = Kanagawabones
 macos-icon = holographic
 copy-on-select = true
 right-click-action = copy-or-paste
+keybind = shift+enter=text:\x1b\r
